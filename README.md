@@ -18,5 +18,7 @@ Genre: People suggested open world or platformer, another suggested it be space-
 
 We can start creating images and assets for the game, them being prototypes. Just to get the ball rolling.
 
+I say yes, start creating assets and images. Who wants to start doing it?
+
 Write your suggestions here:
 
