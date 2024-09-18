@@ -10,3 +10,4 @@ Ethan Mabey: Programming/Game Logic, Animation, Mechanics
 
 (multiple people can do the same thing)
 
+Overview: People suggested an open-world game or a platformer.
