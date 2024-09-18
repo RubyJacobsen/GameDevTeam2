@@ -16,5 +16,7 @@ Overview: People suggested an open-world game or a platformer.
 
 Genre: People suggested open world or platformer, another suggested it be space-themed.
 
+We can start creating images and assets for the game, them being prototypes. Just to get the ball rolling.
+
 Write your suggestions here:
 
