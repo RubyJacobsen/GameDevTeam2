@@ -16,3 +16,5 @@ Overview: People suggested an open-world game or a platformer.
 
 Genre: People suggested open world or platformer, another suggested it be space-themed.
 
+Write your suggestions here:
+
