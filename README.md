@@ -8,6 +8,8 @@ Brannon Lai: Programming/Game Logic, Anything else
 
 Ethan Mabey: Programming/Game Logic, Animation, Mechanics
 
+George Huang: Graphics, Script/Story
+
 (multiple people can do the same thing)
 
 Overview: People suggested an open-world game or a platformer.
