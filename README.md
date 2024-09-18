@@ -13,3 +13,6 @@ George Huang: Graphics, Script/Story
 (multiple people can do the same thing)
 
 Overview: People suggested an open-world game or a platformer.
+
+Genre: People suggested open world or platformer, another suggested it be space-themed.
+
