@@ -4,7 +4,7 @@ Ruby Jacobsen: Graphics, script
 
 Elan Horne: Sound, Graphics
 
-Brannon Lai:
+Brannon Lai: Programming/Game Logic, Anything else
 
 (multiple people can do the same thing)
 
