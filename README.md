@@ -6,7 +6,7 @@ Elan Horne: Sound, Graphics
 
 Brannon Lai: Programming/Game Logic, Anything else
 
-Ethan Mabey: Programming/Game Logic, Animation, Mechanics
+Ethan Mabey: Programming/Game Logic, Animation, Mechanics, the Loooooore
 
 George Huang: Graphics, Script/Story
 
