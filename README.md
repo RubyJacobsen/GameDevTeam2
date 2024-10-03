@@ -8,7 +8,7 @@ Brannon Lai: Programming/Game Logic, Anything else
 
 Ethan Mabey: Programming/Game Logic, Animation, Mechanics, the Loooooore
 
-George Huang: Graphics, Script/Story
+George Huang: Graphics/UI Design, Script/Story
 
 (multiple people can do the same thing)
 
