@@ -25,4 +25,6 @@ Write your suggestions here:
 
 ![Game Over](https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/GameOver.png)
 
+![star screen] (https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/StartScreenGH.pdf)
+
 
