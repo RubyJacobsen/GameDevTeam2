@@ -23,4 +23,4 @@ Genre: People suggested open world or platformer, another suggested it be space-
 
 ![mockup](https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/Untitled%20Diagram(3)(3).drawio(1).png)
 
-
+![gameplayscreen](https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/GameplayScreenGH.png)
