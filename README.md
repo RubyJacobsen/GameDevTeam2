@@ -22,3 +22,7 @@ I say yes, start creating assets and images. Who wants to start doing it?
 
 Write your suggestions here:
 
+
+![Game Over}(https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/GameOver.png)
+
+
