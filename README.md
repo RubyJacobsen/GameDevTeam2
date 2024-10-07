@@ -16,7 +16,7 @@ Overview: People suggested an open-world game or a platformer.
 
 Genre: People suggested open world or platformer, another suggested it be space-themed. New idea, we could do a roguelike, those are pretty fun too
 
-ASTROCATS
+AstroCats
 
 ![Start screen](https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/StartScreenGH.png)
 
