@@ -1,6 +1,6 @@
 class player {
   PImage ship;
-  float x, y, velocity, direction, friction, acceleration, atkcd ;
+  float x, y, vy, vx, direction, friction, ay,ax, atkcd ;
   int bullets, guncount, gundamage, health, xp, level;
   //u[]:upgrades
   player(float x, float y) {
@@ -14,10 +14,32 @@ class player {
     level=1;
   }
   void display() {
+    pushMatrix();
     rectMode(CENTER);
     //translate(width/2,height/2);
     translate(x, y);
     rotate(atan2(mouseY-y, mouseX-x));
     rect(0, 0, 80, 80);
+    popMatrix();
+  }
+  void move() {
+  x+=vx;
+  vx+=ax-(vx*friction);
+  y+=vy;
+  vy+=ay-(vy*friction);
+  //ax=1;
+  if(keyPressed) {
+  if(key=='w'||key=='W'){
+  ay=-1;
+  }else if(key=='s'||key=='S'){
+  ay=1;
+  }else if(key=='a'||key=='A'){
+  ax=-1;
+  }else if(key=='d'||key=='D'){
+  ax=1;
+  }
+  
+  }
+  
   }
 }

@@ -10,5 +10,6 @@ p = new player(260,160);
 void draw() {
 background(0);
 p.display();
+p.move();
 //p.x+=0.3;
 }
