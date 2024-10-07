@@ -10,7 +10,6 @@ Ethan Mabey: Programming/Game Logic, Animation, Mechanics, the Loooooore
 
 George Huang: Graphics/UI Design, Script/Story
 
-(multiple people can do the same thing)
 
 Overview: People suggested an open-world game or a platformer.
 
