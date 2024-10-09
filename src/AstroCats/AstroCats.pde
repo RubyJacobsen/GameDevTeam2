@@ -5,7 +5,7 @@ Player p;
 
 void setup() {
 size(500,500);
-p = new player(260,160);
+p = new Player(260,160);
 
 }
 void draw() {
