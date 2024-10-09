@@ -22,7 +22,7 @@ class Projectile {
     pushMatrix();
     translate(x,y);
     rotate(direction);
-  rect(0,0,size,size/5);
+  rect(0,0,size,size/4);
   popMatrix();
   }
   void move() {

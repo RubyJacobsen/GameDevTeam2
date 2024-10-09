@@ -1,6 +1,6 @@
 class Player {
   PImage ship;
-  float x, y, vy, vx, direction, friction, ay, ax, atkcd ;
+  public float x, y, vy, vx, direction, friction, ay, ax, atkcd ;
   int bullets, guncount, gundamage, health, xp, level;
   //u[]:upgrades
   //p[]projectiles
@@ -64,5 +64,9 @@ y+=vy;
       y=height+50;
     }
   }
-  void shoot(){}
+  boolean mousePressed(){
+    if mouse
+  
+  
+  }
 }
