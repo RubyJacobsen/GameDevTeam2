@@ -17,4 +17,16 @@ class Projectile {
       c=#ff0000;
     }
   }
+  void display() {
+    fill (c);
+    pushMatrix();
+    translate(x,y);
+    rotate(direction);
+  rect(0,0,size,size/5);
+  popMatrix();
+  }
+  void move() {
+  y-=sin(direction);
+  x-=cos(direction);
+  }
 }
