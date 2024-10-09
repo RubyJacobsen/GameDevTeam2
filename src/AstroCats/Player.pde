@@ -64,4 +64,5 @@ y+=vy;
       y=height+50;
     }
   }
+  void shoot(){}
 }
