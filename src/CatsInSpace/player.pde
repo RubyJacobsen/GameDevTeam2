@@ -26,11 +26,17 @@ class player {
   void move() {
   x+=vx;
   //vx+=ax-((vx*friction));
-  vx-=pow(vx,1/3)*friction;
-  println(pow(-39393.0,0.3));
-  y+=vy;
-  //vy+=ay-((vy*friction));
-  vy-=pow(vy,1/3)*friction;
+  if(vx>0) {
+  vx-=sqrt(vx)*friction;}
+  else {
+  vx+=sqrt(abs(vx))*friction;
+  }
+ 
+  if(vy>0) {
+  vy+=sqrt(vy)*friction;}
+  else {
+  vy-=sqrt(abs(vy))*friction;
+  }
   //ax=1;
   if(keyPressed) {
   if(key=='w'||key=='W'){
