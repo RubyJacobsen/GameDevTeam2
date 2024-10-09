@@ -1,17 +1,20 @@
 class Upgrade {
   // Member Variables
-  int x,y,float;
-PImage upgrade1;
+  int x, y;
+  float e;
+  PImage upgrade1;
 
-// Constructor
-Upgrade(){
-  x = 0;
-  y = 0;
-  upgrade1 = loadImage("");
-}
+  // Constructor
+  Upgrade(int x, int y) {
+    x=this.x;
+    y=this.y;
+    upgrade1 = loadImage("");
+  }
 
-// Memeber Methods
-void display () {}
+  // Memeber Methods
+  void display () {
+  }
 
-void move () {}
+  void move () {
+  }
 }
