@@ -1,9 +1,16 @@
 // Ruby Jacobsen | AstroCats | 9 Oct 2024
 
-void setup() {}
+Player p;
 
-void draw() {}
 
-void keyPressed() {}
+void setup() {
+size(500,500);
+p = new player(260,160);
 
-void mousePressed() {}
+}
+void draw() {
+background(0);
+p.display();
+p.move();
+//p.x+=0.3;
+}
