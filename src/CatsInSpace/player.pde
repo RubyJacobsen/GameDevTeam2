@@ -31,6 +31,7 @@ class player {
       vx+=sqrt(abs(vx))*friction;
     }
 println(vy);
+y+=vy;
     if (vy>0) {
       vy-=sqrt(vy)*friction;
     } else {
