@@ -17,10 +17,14 @@ Genre: People suggested open world or platformer, another suggested it be space-
 
 AstroCats
 
+Start screen
 ![Start screen](https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/StartScreenGH.png)
 
+Game Over
 ![Game Over](https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/GameOver%20(3).png)
 
+Mockup
 ![mockup](https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/Untitled%20Diagram(3)(3).drawio(1).png)
 
+Game Play
 ![gameplayscreen](https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/GameplayScreenGH.png)
