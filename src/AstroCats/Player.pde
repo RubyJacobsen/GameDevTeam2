@@ -31,8 +31,8 @@ class Player {
     } else {
       vx+=sqrt(abs(vx))*friction;
     }
-//println(vy);
-y+=vy;
+    //println(vy);
+    y+=vy;
     if (vy>0) {
       vy-=sqrt(vy)*friction;
     } else {
@@ -64,9 +64,9 @@ y+=vy;
       y=height+50;
     }
   }
-  boolean mousePressed(){
-    if mouse
-  
-  
+  boolean mousePressed() {
+    if (mousePressed) {
+      return true;
+    }
   }
 }

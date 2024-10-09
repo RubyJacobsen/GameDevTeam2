@@ -1,8 +1,8 @@
-class enemy {
+class Enemy {
   float x, y, a;
   int hp, d;
   
-  enemy(float ex, float ey) {
+  Enemy(float ex, float ey) {
     this.x = ex;
     this.y = ey;
   }
