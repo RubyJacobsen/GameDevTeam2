@@ -1,7 +1,7 @@
 class Upgrade {
   // Member Variables
   int x, y;
-  float e;
+  float c;
   PImage upgrade1;
 
   // Constructor
