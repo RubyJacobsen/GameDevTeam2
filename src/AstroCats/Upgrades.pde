@@ -6,8 +6,8 @@ class Upgrade {
 
   // Constructor
   Upgrade(int x, int y) {
-    x=this.x;
-    y=this.y;
+    this.x=x;
+    this.y=y;
     upgrade1 = loadImage("tunainspace");
   }
 
