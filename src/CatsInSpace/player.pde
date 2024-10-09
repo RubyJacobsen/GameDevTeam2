@@ -1,6 +1,6 @@
 class player {
   PImage ship;
-  float x, y, vy, vx, direction, friction, ay,ax, atkcd ;
+  float x, y, vy, vx, direction, friction, ay, ax, atkcd ;
   int bullets, guncount, gundamage, health, xp, level;
   //u[]:upgrades
   player(float x, float y) {
@@ -12,7 +12,6 @@ class player {
     gundamage=10;
     health=100;
     level=1;
-    
   }
   void display() {
     pushMatrix();
@@ -24,44 +23,43 @@ class player {
     popMatrix();
   }
   void move() {
-  x+=vx;
-  //vx+=ax-((vx*friction));
-  if(vx>0) {
-  vx-=sqrt(vx)*friction;}
-  else {
-  vx+=sqrt(abs(vx))*friction;
-  }
- 
-  if(vy>0) {
-  vy+=sqrt(vy)*friction;}
-  else {
-  vy-=sqrt(abs(vy))*friction;
-  }
-  //ax=1;
-  if(keyPressed) {
-  if(key=='w'||key=='W'){
-  //ay=-1;
-  vy-=1;
-  }else if(key=='s'||key=='S'){
-  //ay=1;
-  vy+=1;
-  }else if(key=='a'||key=='A'){
-  //ax=-1;
-  vx-=1;
-  }else if(key=='d'||key=='D'){
-  //ax=1;
-  vx+=1;
-  }
-  
-  }
-  if(x>width+50){
-  x=-50;
-  } else if(x<-50){
-  x=width+50;
-  } else if (y>height+50) {
-  y=-50;
-  } else if (y<-50) {
-  y=height+50;
-  }
+    x+=vx;
+    //vx+=ax-((vx*friction));
+    if (vx>0) {
+      vx-=sqrt(vx)*friction;
+    } else {
+      vx+=sqrt(abs(vx))*friction;
+    }
+println(vy);
+    if (vy>0) {
+      vy-=sqrt(vy)*friction;
+    } else {
+      vy+=sqrt(abs(vy))*friction;
+    }
+    //ax=1;
+    if (keyPressed) {
+      if (key=='w'||key=='W') {
+        //ay=-1;
+        vy-=1;
+      } else if (key=='s'||key=='S') {
+        //ay=1;
+        vy+=1;
+      } else if (key=='a'||key=='A') {
+        //ax=-1;
+        vx-=1;
+      } else if (key=='d'||key=='D') {
+        //ax=1;
+        vx+=1;
+      }
+    }
+    if (x>width+50) {
+      x=-50;
+    } else if (x<-50) {
+      x=width+50;
+    } else if (y>height+50) {
+      y=-50;
+    } else if (y<-50) {
+      y=height+50;
+    }
   }
 }
