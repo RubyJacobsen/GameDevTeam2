@@ -2,13 +2,14 @@ class Player {
   PImage ship;
   public float x, y, vy, vx, direction, friction, ay, ax, atkcd,bspeed;
   int bullets ,bsize,guncount, gundamage, health, xp, level;
+  int lastATK;
   //u[]:upgrades
   //p[]projectiles
   Player(float x, float y) {
     this.x=x;
     this.y=y;
     friction=0.1; //to be multiplied by current velocity and subtracted by acceleration
-    atkcd=1;//measured in seconds
+    atkcd=0.3;//measured in seconds
     guncount=1;
     gundamage=10;
     health=100;
@@ -72,4 +73,11 @@ class Player {
   //    return true;
   //  } else {return false;}
   //}
+  int canATK(int thisATK) {
+    if(thisATK-lastATK>atkcd) {
+  return thisATK;}
+  else {
+  return -1;
+  }
+  }
 }
