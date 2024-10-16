@@ -8,6 +8,7 @@ class Projectile {
     this.x=x;
     this.y=y;
     this.speed=speed;
+    
     this.direction=direction;
     this.damage=damage;
     this.size=size;
@@ -27,7 +28,7 @@ class Projectile {
   popMatrix();
   }
   void move() {
-  y-=sin(direction);
-  x-=cos(direction);
+  y-=sin(direction)*speed;
+  x-=cos(direction)*speed;
   }
 }

@@ -1,7 +1,7 @@
 class Player {
   PImage ship;
-  public float x, y, vy, vx, direction, friction, ay, ax, atkcd,bspeed;
-  int bullets ,bsize,guncount, gundamage, health, xp, level;
+  public float x, y, vy, vx, direction, friction, ay, ax, atkcd, bspeed;
+  int bullets, bsize, guncount, gundamage, health, xp, level;
   int lastATK;
   //u[]:upgrades
   //p[]projectiles
@@ -15,7 +15,7 @@ class Player {
     health=100;
     level=1;
     bsize=50;
-    bspeed=1;
+    bspeed=5;
   }
   void display() {
     pushMatrix();
@@ -73,11 +73,12 @@ class Player {
   //    return true;
   //  } else {return false;}
   //}
-  int canATK(int thisATK) {
-    if(thisATK-lastATK>atkcd) {
-  return thisATK;}
-  else {
-  return -1;
-  }
-  }
+  //int canATK(int thisATK) {
+  //  if (thisATK-lastATK>atkcd) {
+  //    lastATK=thisATK;
+  //    return thisATK;
+  //  } else {
+  //    return -1;
+  //  }
+  //}
 }
