@@ -8,11 +8,11 @@ class Projectile {
     this.x=x;
     this.y=y;
     this.speed=speed;
-    
+
     this.direction=direction;
     this.damage=damage;
     this.size=size;
-    
+
     if (f) {
       c=#0000FF;
     } else {
@@ -22,13 +22,21 @@ class Projectile {
   void display() {
     fill (c);
     pushMatrix();
-    translate(x,y);
+    translate(x, y);
     rotate(direction);
-  rect(0,0,size,size/4);
-  popMatrix();
+    rect(0, 0, size, size/4);
+    popMatrix();
   }
   void move() {
-  y+=sin(direction)*speed;
-  x+=cos(direction)*speed;
+    y+=sin(direction)*speed;
+    x+=cos(direction)*speed;
+  }
+  boolean crash (int tx, int ty, int tsize) {
+    if (dist(x,y,tx,ty)<tsize) {
+      return true;
+    } else {
+    return false;
+    }
+  
   }
 }

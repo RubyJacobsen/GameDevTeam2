@@ -18,6 +18,7 @@ class Player {
     bspeed=5;
   }
   void display() {
+    fill(0,255,0);
     pushMatrix();
     rectMode(CENTER);
     //translate(width/2,height/2);
