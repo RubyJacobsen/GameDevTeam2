@@ -28,7 +28,7 @@ class Projectile {
   popMatrix();
   }
   void move() {
-  y-=sin(direction)*speed;
-  x-=cos(direction)*speed;
+  y+=sin(direction)*speed;
+  x+=cos(direction)*speed;
   }
 }

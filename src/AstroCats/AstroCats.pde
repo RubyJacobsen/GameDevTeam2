@@ -20,8 +20,8 @@ void draw() {
   background(0);
   p.display();
   p.move();
-  //e1.display(p.x,p.y);
-  //e2.display(p.x,p.y);
+  e1.display(p.x,p.y);
+  e2.display(p.x,p.y);
   e1.move();
   p1.display();
   p1.move();
@@ -31,9 +31,9 @@ void draw() {
       p.lastATK=m;
     }
   }
-  for (int i=0; i<projectiles.size(); i++) {
-    projectiles.get(i).display();
-    projectiles.get(i).move();
+  for (Projectile p: projectiles) {
+    p.display();
+    p.move();
   }
   //p.x+=0.3;
 }
