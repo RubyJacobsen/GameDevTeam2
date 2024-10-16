@@ -12,7 +12,7 @@ class Enemy {
     pushMatrix();
     translate(x, y);
     rotate(atan2(y-py, x-px));
-    fill(0, 0, 255); 
+    fill(255, 0, 0); 
     ellipse(0, 0, 60, 30);
     fill(255);
     popMatrix();
