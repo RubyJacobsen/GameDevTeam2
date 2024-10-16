@@ -31,7 +31,7 @@ class Projectile {
     y+=sin(direction)*speed;
     x+=cos(direction)*speed;
   }
-  boolean crash (int tx, int ty, int tsize) {
+  boolean crash (float tx, float ty, int tsize) {
     if (dist(x,y,tx,ty)<tsize) {
       return true;
     } else {
