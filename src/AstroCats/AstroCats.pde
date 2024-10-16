@@ -3,6 +3,7 @@
 Player p;
 Enemy e1, e2;
 Projectile p1;
+ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 
 
 void setup() {
@@ -22,5 +23,12 @@ void draw() {
   e1.move();
   p1.display();
 p1.move();
+if(mousePressed) {
+  projectiles.add(new Projectile(true,p.x,p.y,p.bspeed,p.direction,p.gundamage,p.bsize));
+}
+for(int i=0; i<projectiles.size();i++) {
+projectiles.get(i).display();
+projectiles.get(i).move();
+}
 //p.x+=0.3;
 }

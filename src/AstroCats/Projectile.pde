@@ -11,6 +11,7 @@ class Projectile {
     this.direction=direction;
     this.damage=damage;
     this.size=size;
+    
     if (f) {
       c=#0000FF;
     } else {

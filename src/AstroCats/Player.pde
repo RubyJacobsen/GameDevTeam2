@@ -1,7 +1,7 @@
 class Player {
   PImage ship;
-  public float x, y, vy, vx, direction, friction, ay, ax, atkcd ;
-  int bullets, guncount, gundamage, health, xp, level;
+  public float x, y, vy, vx, direction, friction, ay, ax, atkcd,bspeed;
+  int bullets ,bsize,guncount, gundamage, health, xp, level;
   //u[]:upgrades
   //p[]projectiles
   Player(float x, float y) {
@@ -13,13 +13,16 @@ class Player {
     gundamage=10;
     health=100;
     level=1;
+    bsize=50;
+    bspeed=1;
   }
   void display() {
     pushMatrix();
     rectMode(CENTER);
     //translate(width/2,height/2);
     translate(x, y);
-    rotate(atan2(mouseY-y, mouseX-x));
+    direction=atan2(mouseY-y, mouseX-x);
+    rotate(direction);
     rect(0, 0, 80, 80);
     popMatrix();
   }
@@ -64,9 +67,9 @@ class Player {
       y=height+50;
     }
   }
-  boolean mousePressed() {
-    if (mousePressed) {
-      return true;
-    } else {return false;}
-  }
+  //boolean mousePressed() {
+  //  if (mousePressed) {
+  //    return true;
+  //  } else {return false;}
+  //}
 }
