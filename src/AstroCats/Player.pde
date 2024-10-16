@@ -67,6 +67,6 @@ class Player {
   boolean mousePressed() {
     if (mousePressed) {
       return true;
-    }
+    } else {return false;}
   }
 }
