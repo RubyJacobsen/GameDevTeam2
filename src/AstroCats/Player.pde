@@ -16,16 +16,18 @@ class Player {
     level=1;
     bsize=50;
     bspeed=5;
+    ship = loadImage("Spaceship.png");
   }
   void display() {
     fill(0,255,0);
     pushMatrix();
-    rectMode(CENTER);
+    imageMode(CENTER);
     //translate(width/2,height/2);
     translate(x, y);
     direction=atan2(mouseY-y, mouseX-x);
     rotate(direction);
-    rect(0, 0, 80, 80);
+    ship.resize(75,75);
+    image(ship,0,0);
     popMatrix();
   }
   void move() {
