@@ -4,11 +4,11 @@ class Enemy {
   int size=45;
 
 
-  Enemy(float ex, float ey) {
+   Enemy(float ex, float ey, int h) {
   x = ex;
     y = ey;
+    hp=h;
   }
-
   void display(float px, float py) {
     pushMatrix();
     translate(x, y);
