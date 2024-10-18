@@ -5,14 +5,15 @@ Projectile p1;
 ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 int m=millis();
-
+Upgrade u1, u2;
 
 void setup() {
   size(500, 500);
   p = new Player(260, 160);
   enemies.add(new Enemy(250, 50));
   enemies.add(new Enemy(250, 400));
-
+  u1 = new Upgrade(80, 90, 'h');
+  u2 = new Upgrade(170, 90, 'd');
   //p1 = new Projectile(true, width/2, height/2, 1.3, 2.13, 0, 70);
 }
 
@@ -24,6 +25,8 @@ void draw() {
   for ( Enemy e : enemies) {
     e.display(p.x, p.y);
     e.move();
+    u1.display();
+    u2.display();
   }
 
   //p1.display();
