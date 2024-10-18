@@ -19,7 +19,7 @@ void setup() {
 
 void draw() {
   m=millis();
-  background(0);
+  background(#200329);
   p.display();
   p.move();
   for ( Enemy e : enemies) {
@@ -45,7 +45,7 @@ void draw() {
     float temps = projectiles.get(i).size;
     if (tempx-temps>width||tempx+temps<0||tempy-temps>height||tempy+temps<0) {
       projectiles.remove(i);
-      println(projectiles.size());
+      //println(projectiles.size());
     }
     
     for (Enemy eeenmie : enemies) {
