@@ -22,11 +22,11 @@ void draw() {
   background(#200329);
   p.display();
   p.move();
+  u1.display();
+  u2.display();
   for ( Enemy e : enemies) {
     e.display(p.x, p.y);
     e.move();
-    u1.display();
-    u2.display();
   }
 
   //p1.display();
@@ -47,16 +47,19 @@ void draw() {
       projectiles.remove(i);
       //println(projectiles.size());
     }
-    
-    for (Enemy eeenmie : enemies) {
+
+    for (int j=0; j<enemies.size(); j++) {
+      //println(j);
       if (i>=projectiles.size()) {
-      break;
-    }
-      if (projectiles.get(i).crash(eeenmie.x, eeenmie.y, eeenmie.size) & projectiles.get(i).f) {
-        eeenmie.hp-=projectiles.get(i).damage;
+        break;
+      }
+      if (projectiles.get(i).crash(enemies.get(j).x, enemies.get(j).y, enemies.get(j).size) & projectiles.get(i).f) {
+        enemies.get(j).hp-=projectiles.get(i).damage;
+        if (enemies.get(j).hp<=0) {
+          enemies.remove(j);
+        }
         projectiles.remove(i);
       }
     }
   }
-  //p.x+=0.3;
 }

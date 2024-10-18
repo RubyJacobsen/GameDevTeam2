@@ -17,7 +17,6 @@ class Enemy {
     rotate(atan2(y-py, x-px));
     fill(255, 0, 0);
     ellipse(0, 0, size*1.5, size/1.5);
-    fill(255);
     popMatrix();
     if (hp<mhp) {
       rectMode(CENTER);
