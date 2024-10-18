@@ -16,7 +16,7 @@ class Player {
     level=1;
     bsize=50;
     bspeed=5;
-    ship = loadImage("Spaceship.png");
+    ship = loadImage("Spaceship-1.png");
   }
   void display() {
     fill(0,255,0);
