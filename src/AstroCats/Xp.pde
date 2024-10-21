@@ -11,7 +11,7 @@ class Xp {
   
   }
   void move(float tx, float ty) {
-    direction=atan2(tx-x,ty-y);
+    direction=atan2(ty-y,tx-x);
     y+=sin(direction);
     x+=cos(direction);
   
