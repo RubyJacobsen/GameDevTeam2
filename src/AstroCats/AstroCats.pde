@@ -16,7 +16,7 @@ void setup() {
   u2 = new Upgrade(170, 90, 'd');
   u3 = new Upgrade(260, 90, 's');
   //p1 = new Projectile(true, width/2, height/2, 1.3, 2.13, 0, 70);
-  x1=new Xp(0,0);
+  x1=new Xp(width/2,height/2);
 }
 
 void draw() {
