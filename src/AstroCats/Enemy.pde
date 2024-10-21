@@ -1,5 +1,5 @@
 class Enemy {
-  float x, y, a;
+  float x, y, vx, vy;
   int hp, d, mhp;
   int size=45;
   PImage e1, e2;
@@ -13,6 +13,8 @@ class Enemy {
     e1 = loadImage("Alien1GH.png");
     e2 = loadImage("Alien2GH.png");
     e = random(0,2);
+    vx = random(-5,5);
+    vy = random(-5,5);
   }
   void display(float px, float py) {
     pushMatrix();
@@ -42,12 +44,9 @@ class Enemy {
   void death() {
   }
 
-  void aggro() {
-  }
-
   void move() {
-    //y+=1;
-    //x+=2;
+    x += vx;
+    y += vy;
   }
 
   void hit () {
