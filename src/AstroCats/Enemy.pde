@@ -3,7 +3,7 @@ class Enemy {
   int hp, d, mhp;
   int size=45;
   PImage e1, e2;
-  float e = random(0,2);
+  float e = random(0, 2);
 
   Enemy(float ex, float ey, int h) {
     x = ex;
@@ -12,9 +12,9 @@ class Enemy {
     mhp=h;
     e1 = loadImage("Alien1GH.png");
     e2 = loadImage("Alien2GH.png");
-    e = random(0,2);
-    vx = random(-5,5);
-    vy = random(-5,5);
+    e = random(0, 2);
+    vx = random(-5, 5);
+    vy = random(-5, 5);
   }
   void display(float px, float py) {
     pushMatrix();
@@ -26,7 +26,7 @@ class Enemy {
     } else if (e < 2) {
       image(e2, 0, 0, size*1.5, size*1.5);
     }
-    
+
     popMatrix();
     if (hp<mhp) {
       rectMode(CENTER);
@@ -45,8 +45,14 @@ class Enemy {
   }
 
   void move() {
-    x += vx;
-    y += vy;
+    x += vx/2;
+    y += vy/2;
+    if (x > width-10 || x < 10) {
+      vx *= -1;
+    }
+    if (y > height-10 || y < 10) {
+      vy *= -1;
+    }
   }
 
   void hit () {
