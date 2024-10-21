@@ -22,6 +22,7 @@ class Projectile {
   void display() {
     fill (c);
     pushMatrix();
+    rectMode(CENTER);
     translate(x, y);
     rotate(direction);
     rect(0, 0, size, size/4);
@@ -32,7 +33,8 @@ class Projectile {
     x+=cos(direction)*speed;
   }
   boolean crash (float tx, float ty, int tsize) {
-    if (dist(x,y,tx,ty)<tsize) {
+    //if (dist(x,y,tx,ty)<tsize) {
+    if(abs(ty-y)<tsize & abs(tx-x)<tsize-size/2) {
       return true;
     } else {
     return false;
