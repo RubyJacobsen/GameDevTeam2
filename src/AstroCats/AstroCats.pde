@@ -26,6 +26,9 @@ void draw() {
   u1.display();
   u2.display();
   u3.display();
+  u1.hover();
+  u2.hover();
+  u3.hover();
   for ( Enemy e : enemies) {
     e.display(p.x, p.y);
     e.move();

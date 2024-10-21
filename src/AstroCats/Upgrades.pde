@@ -3,6 +3,7 @@ class Upgrade {
   int x, y;
   char c;
   PImage d, h, s;
+  color col;
 
   // Constructor
   Upgrade(int x, int y, char c) {
@@ -12,6 +13,7 @@ class Upgrade {
     d = loadImage("tunainspace.png");
     h = loadImage("catnip.png");
     s = loadImage("cucumber.png");
+    col = #ffffff;
   }
 
   // Memeber Methods
@@ -21,7 +23,7 @@ class Upgrade {
     h.resize(70, 70);
     s.resize(150, 150);
     rectMode(CENTER);
-    fill(255);
+    fill(col);
     rect(x, y, 75, 125);
     fill(0);
     if (c == 'd') {
@@ -48,6 +50,10 @@ class Upgrade {
     fill(0, 0, 255);
   }
 
-  void hover () {
+  void hover() {
+    if (mouseX < x+38 && mouseX > x-38 && mouseY < y+62 && mouseY > y-62) {
+      col = #d6d6d6;
+    }
+    else col = #ffffff;
   }
 }

@@ -45,8 +45,8 @@ class Enemy {
   }
 
   void move() {
-    x += vx/2;
-    y += vy/2;
+    x += vx/3;
+    y += vy/3;
     if (x > width-10 || x < 10) {
       vx *= -1;
     }
