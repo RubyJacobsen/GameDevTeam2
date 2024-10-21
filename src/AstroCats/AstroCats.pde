@@ -5,7 +5,7 @@ Projectile p1;
 ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 int m=millis();
-Upgrade u1, u2;
+Upgrade u1, u2, u3;
 
 void setup() {
   size(500, 500);
@@ -14,6 +14,7 @@ void setup() {
   enemies.add(new Enemy(250, 400, 100));
   u1 = new Upgrade(80, 90, 'h');
   u2 = new Upgrade(170, 90, 'd');
+  u3 = new Upgrade(260, 90, 's');
   //p1 = new Projectile(true, width/2, height/2, 1.3, 2.13, 0, 70);
 }
 
@@ -24,6 +25,7 @@ void draw() {
   p.move();
   u1.display();
   u2.display();
+  u3.display();
   for ( Enemy e : enemies) {
     e.display(p.x, p.y);
     e.move();
