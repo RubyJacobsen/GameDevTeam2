@@ -3,8 +3,7 @@ class Player {
   public float x, y, vy, vx, direction, friction, ay, ax, atkcd, bspeed;
   int bullets, bsize, guncount, gundamage, health, xp, level;
   int lastATK;
-  //u[]:upgrades
-  //p[]projectiles
+
   Player(float x, float y) {
     this.x=x;
     this.y=y;
