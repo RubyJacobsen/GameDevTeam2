@@ -2,21 +2,29 @@ class Enemy {
   float x, y, a;
   int hp, d, mhp;
   int size=45;
-
+  PImage e1, e2;
+  float e = random(0,2);
 
   Enemy(float ex, float ey, int h) {
     x = ex;
     y = ey;
     hp=h;
     mhp=h;
+    e1 = loadImage("Alien1GH.png");
+    e2 = loadImage("Alien2GH.png");
+    e = random(0,2);
   }
   void display(float px, float py) {
     pushMatrix();
-
     translate(x, y);
     rotate(atan2(y-py, x-px));
     fill(255, 0, 0);
-    ellipse(0, 0, size*1.5, size/1.5);
+    if (e<1) {
+      image(e1, 0, 0, size*1.5, size*1.5);
+    } else if (e < 2) {
+      image(e2, 0, 0, size*1.5, size*1.5);
+    }
+    
     popMatrix();
     if (hp<mhp) {
       rectMode(CENTER);
