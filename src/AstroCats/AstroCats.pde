@@ -5,7 +5,6 @@ Projectile p1;
 ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 int m=millis();
-boolean r;
 Upgrade u1, u2;
 
 void setup() {
@@ -20,20 +19,14 @@ void setup() {
 
 void draw() {
   m=millis();
-  float z = random(-1, 1);
-  if (z > 0) {
-    r = true;
-  } else {
-    r = false;
-  }
-  background(0);
+  background(#200329);
   p.display();
   p.move();
+  u1.display();
+  u2.display();
   for ( Enemy e : enemies) {
     e.display(p.x, p.y);
-    e.move(p.x/e.sx, p.y/e.sy, r);
-    u1.display();
-    u2.display();
+    e.move();
   }
 
   //p1.display();
@@ -52,15 +45,19 @@ void draw() {
     float temps = projectiles.get(i).size;
     if (tempx-temps>width||tempx+temps<0||tempy-temps>height||tempy+temps<0) {
       projectiles.remove(i);
-      println(projectiles.size());
+      //println(projectiles.size());
     }
 
-    for (Enemy eeenmie : enemies) {
+    for (int j=0; j<enemies.size(); j++) {
+      //println(j);
       if (i>=projectiles.size()) {
         break;
       }
-      if (projectiles.get(i).crash(eeenmie.x, eeenmie.y, eeenmie.size) & projectiles.get(i).f) {
-        eeenmie.hp-=projectiles.get(i).damage;
+      if (projectiles.get(i).crash(enemies.get(j).x, enemies.get(j).y, enemies.get(j).size) & projectiles.get(i).f) {
+        enemies.get(j).hp-=projectiles.get(i).damage;
+        if (enemies.get(j).hp<=0) {
+          enemies.remove(j);
+        }
         projectiles.remove(i);
       }
     }
