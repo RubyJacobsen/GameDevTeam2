@@ -1,6 +1,6 @@
 class Player {
   PImage ship;
-  public float x, y, vy, vx, direction, friction, ay, ax, atkcd, bspeed;
+  float x, y, vy, vx, direction, friction, ay, ax, atkcd, bspeed;
   int bullets, bsize, guncount, gundamage, health, xp, level;
   int lastATK;
 

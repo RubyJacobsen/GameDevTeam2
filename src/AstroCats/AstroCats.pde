@@ -6,7 +6,7 @@ ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 int m=millis();
 Upgrade u1, u2, u3;
-
+Xp x1;
 void setup() {
   size(500, 500);
   p = new Player(260, 160);
@@ -16,6 +16,7 @@ void setup() {
   u2 = new Upgrade(170, 90, 'd');
   u3 = new Upgrade(260, 90, 's');
   //p1 = new Projectile(true, width/2, height/2, 1.3, 2.13, 0, 70);
+  x1=new Xp(0,0);
 }
 
 void draw() {
@@ -36,6 +37,8 @@ void draw() {
 
   //p1.display();
   //p1.move();
+  x1.display();
+  x1.move(p.x,p.y);
   if (mousePressed) {
     if (m-p.lastATK>p.atkcd*1000) {
       projectiles.add(new Projectile(true, p.x, p.y, p.bspeed, p.direction, p.gundamage, p.bsize));

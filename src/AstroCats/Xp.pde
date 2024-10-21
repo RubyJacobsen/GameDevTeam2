@@ -1,14 +1,18 @@
-float tx, ty;
+class Xp {
+  
+  float x, y, direction;
 
-
-class Xp extends Player {
   Xp(float x, float y) {
-  super(x,y);
-  tx=x;
-  ty=y;
+  this.x=y;
+  this.x=y;
   }
   void display() {
   rect(x,y,10,10);
+  
+  }
+  void move(float tx, float ty) {
+    atan2(tx-x,ty-y);
+    
   
   }
 }
