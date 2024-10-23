@@ -38,7 +38,7 @@ void draw() {
         println("health");
       }
       if (u1.c == 'd') {
-        p.gundamage += 50;
+        p.gundamage += 5;
       }
       exp = exp-expr;
     }
