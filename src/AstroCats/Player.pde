@@ -18,15 +18,15 @@ class Player {
     ship = loadImage("Spaceship-1.png");
   }
   void display() {
-    fill(0,255,0);
+    fill(0, 255, 0);
     pushMatrix();
     imageMode(CENTER);
     //translate(width/2,height/2);
     translate(x, y);
     direction=atan2(mouseY-y, mouseX-x);
     rotate(direction);
-    ship.resize(75,75);
-    image(ship,0,0);
+    ship.resize(75, 75);
+    image(ship, 0, 0);
     popMatrix();
   }
   void move() {
@@ -45,21 +45,9 @@ class Player {
       vy+=sqrt(abs(vy))*friction;
     }
     //ax=1;
-    if (keyPressed) {
-      if (key=='w'||key=='W') {
-        //ay=-1;
-        vy-=1;
-      } else if (key=='s'||key=='S') {
-        //ay=1;
-        vy+=1;
-      } else if (key=='a'||key=='A') {
-        //ax=-1;
-        vx-=1;
-      } else if (key=='d'||key=='D') {
-        //ax=1;
-        vx+=1;
-      }
-    }
+    //keyPressed();
+    //keyReleased();
+
     if (x>width+50) {
       x=-50;
     } else if (x<-50) {
@@ -83,4 +71,36 @@ class Player {
   //    return -1;
   //  }
   //}
+
+  void keyPressed() {
+    if (key=='w'||key=='W') {
+      //ay=-1;
+      vy-=1;
+    } else if (key=='s'||key=='S') {
+      //ay=1;
+      vy+=1;
+    } else if (key=='a'||key=='A') {
+      //ax=-1;
+      vx-=1;
+    } else if (key=='d'||key=='D') {
+      //ax=1;
+      vx+=1;
+    }
+  }
+  void keyReleased() {
+    if (key=='w'||key=='W') {
+      //ay=-1;
+      //vy-=-1;
+  
+    } else if (key=='s'||key=='S') {
+      //ay=1;
+      //vy+=-1;
+    } else if (key=='a'||key=='A') {
+      //ax=-1;
+      //vx-=-1;
+    } else if (key=='d'||key=='D') {
+      //ax=1;
+      //vx+=-1;
+    }
+  }
 }

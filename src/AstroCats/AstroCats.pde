@@ -112,3 +112,19 @@ void draw() {
     }
   }
 }
+ void keyPressed() {
+    if (key=='w'||key=='W') {
+      //ay=-1;
+      //vy-=1;
+      println("joweijfowfejwiof");
+    } else if (key=='s'||key=='S') {
+      //ay=1;
+      //vy+=1;
+    } else if (key=='a'||key=='A') {
+      //ax=-1;
+      //vx-=1;
+    } else if (key=='d'||key=='D') {
+      //ax=1;
+      //vx+=1;
+    }
+  }
