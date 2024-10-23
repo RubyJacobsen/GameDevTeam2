@@ -34,7 +34,17 @@ void draw() {
     u1.hover();
     u2.hover();
     u3.hover();
+    if (mousePressed == true && u1.hover() == true) {
+      if (u1.c == 'h') {
+        println("health");
+      }
+      if (u1.c == 'd') {
+        
+      }
+      exp = exp-expr;
+    }
     if (mousePressed == true && u1.hover() == true || mousePressed == true && u2.hover() == true || mousePressed == true && u3.hover() == true) {
+
       exp = 0;
     }
   }
