@@ -22,29 +22,32 @@ class Upgrade {
   // Memeber Methods
   void display () {
     imageMode(CENTER);
-    d.resize(50, 50);
-    h.resize(70, 70);
-    s.resize(150, 150);
+    d.resize(70, 70);
+    h.resize(90, 90);
+    s.resize(190, 190);
     rectMode(CENTER);
     fill(col);
     rect(x, y, 100, 150);
     fill(0);
     textAlign(CENTER, CENTER);
-    textSize(11);
     if (c == 'd') {
       image(d, x, y);
-      text("Damage Level " + dlvl, x, y-40);
-      text("+1", x, y+35);
+      textSize(13);
+      text("Damage Level " + dlvl, x, y-50);
+      textSize(15);
+      text("+5 HP", x, y+50);
     }
     if (c == 'h') {
-      image(h, x-5, y-5);
-      text("Health Level " + hlvl, x, y-40);
-      text("+1", x, y+35);
+      image(h, x-7, y-5);
+      textSize(14);
+      text("Health Level " + hlvl, x, y-50);
+      textSize(15);
+      text("+5 Damage", x, y+50);
     }
     if (c == 's') {
       image(s, x, y);
-      text("Speed Level " + slvl, x, y-40);
-      text("+1", x, y+35);
+      text("Speed Level " + slvl, x, y-50);
+      text("+1 m/s", x, y+50);
     }
     fill(0, 0, 255);
   }
