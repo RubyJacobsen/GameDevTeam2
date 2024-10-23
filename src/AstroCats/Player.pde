@@ -46,7 +46,7 @@ class Player {
     }
     //ax=1;
     keyPressed();
-    //keyReleased();
+    keyReleased();
 
     if (x>width+50) {
       x=-50;
@@ -73,39 +73,41 @@ class Player {
   //}
 
   void keyPressed() {
-    if(keyPressed) {
-    if (key=='w'||key=='W') {
-      //ay=-1;
-      vy-=1;
-    } else if (key=='s'||key=='S') {
-      //ay=1;
-      vy+=1;
-    } else if (key=='a'||key=='A') {
-      //ax=-1;
-      vx-=1;
-    } else if (key=='d'||key=='D') {
-      //ax=1;
-      vx+=1;
-    } else {
-    vx=0;
-    vy=0;
-    }
+    if (keyPressed) {
+      if (key=='w'||key=='W') {
+        //ay=-1;
+        vy-=1;
+      }
+      if (key=='s'||key=='S') {
+        //ay=1;
+        vy+=1;
+      }
+      if (key=='a'||key=='A') {
+        //ax=-1;
+        vx-=1;
+      }
+      if (key=='d'||key=='D') {
+        //ax=1;
+        vx+=1;
+      }
     }
   }
   void keyReleased() {
+    if(!keyPressed) {
     if (key=='w'||key=='W') {
       //ay=-1;
-      //vy-=-1;
-  
+      vy-=-1;
     } else if (key=='s'||key=='S') {
       //ay=1;
-      //vy+=-1;
+      vy+=-1;
     } else if (key=='a'||key=='A') {
       //ax=-1;
-      //vx-=-1;
+      vx-=-1;
     } else if (key=='d'||key=='D') {
+    
       //ax=1;
-      //vx+=-1;
+      vx+=-1;
+    }
     }
   }
 }
