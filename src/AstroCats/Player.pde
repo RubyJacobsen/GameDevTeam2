@@ -45,7 +45,7 @@ class Player {
       vy+=sqrt(abs(vy))*friction;
     }
     //ax=1;
-    //keyPressed();
+    keyPressed();
     //keyReleased();
 
     if (x>width+50) {
@@ -73,6 +73,7 @@ class Player {
   //}
 
   void keyPressed() {
+    if(keyPressed) {
     if (key=='w'||key=='W') {
       //ay=-1;
       vy-=1;
@@ -85,6 +86,10 @@ class Player {
     } else if (key=='d'||key=='D') {
       //ax=1;
       vx+=1;
+    } else {
+    vx=0;
+    vy=0;
+    }
     }
   }
   void keyReleased() {
