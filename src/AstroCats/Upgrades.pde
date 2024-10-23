@@ -52,10 +52,12 @@ class Upgrade {
     fill(0, 0, 255);
   }
 
-  void hover() {
+  boolean hover() {
     if (mouseX < x+38 && mouseX > x-38 && mouseY < y+62 && mouseY > y-62) {
       col = #d6d6d6;
+      return true;
     }
     else col = #ffffff;
+    return false;
   }
 }
