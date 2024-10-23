@@ -35,14 +35,14 @@ class Upgrade {
       textSize(13);
       text("Damage Level " + dlvl, x, y-50);
       textSize(15);
-      text("+5 HP", x, y+50);
+      text("+5 Damage", x, y+50);
     }
     if (c == 'h') {
       image(h, x-7, y-5);
       textSize(14);
       text("Health Level " + hlvl, x, y-50);
       textSize(15);
-      text("+5 Damage", x, y+50);
+      text("+5 HP", x, y+50);
     }
     if (c == 's') {
       image(s, x, y);
@@ -53,7 +53,7 @@ class Upgrade {
   }
 
   boolean hover() {
-    if (mouseX < x+38 && mouseX > x-38 && mouseY < y+62 && mouseY > y-62) {
+    if (mouseX < x+50 && mouseX > x-50 && mouseY < y+75 && mouseY > y-75) {
       col = #d6d6d6;
       return true;
     }
