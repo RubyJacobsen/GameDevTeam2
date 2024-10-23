@@ -15,10 +15,9 @@ void setup() {
   p = new Player(260, 160);
   enemies.add(new Enemy(250, 50, 100));
   enemies.add(new Enemy(250, 400, 100));
-  u1 = new Upgrade(80, 90, 'h');
-  u2 = new Upgrade(190, 90, 'd');
+  u1 = new Upgrade(80, 90, 'd');
+  u2 = new Upgrade(190, 90, 'h');
   u3 = new Upgrade(300, 90, 's');
-  //p1 = new Projectile(true, width/2, height/2, 1.3, 2.13, 0, 70);
   xps.add(new Xp(width/2, height/2));
 }
 
@@ -39,7 +38,7 @@ void draw() {
         println("health");
       }
       if (u1.c == 'd') {
-        
+        p.gundamage += 50;
       }
       exp = exp-expr;
     }
