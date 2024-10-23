@@ -1,6 +1,6 @@
 class Upgrade {
   // Member Variables
-  int x, y;
+  int x, y, dlvl, hlvl, slvl;
   char c;
   PImage d, h, s;
   color col;
@@ -14,6 +14,9 @@ class Upgrade {
     h = loadImage("catnip.png");
     s = loadImage("cucumber.png");
     col = #ffffff;
+    dlvl = 1;
+    hlvl = 1;
+    slvl = 1;
   }
 
   // Memeber Methods
@@ -24,27 +27,23 @@ class Upgrade {
     s.resize(150, 150);
     rectMode(CENTER);
     fill(col);
-    rect(x, y, 75, 125);
+    rect(x, y, 100, 150);
     fill(0);
+    textAlign(CENTER, CENTER);
+    textSize(11);
     if (c == 'd') {
       image(d, x, y);
-      textAlign(CENTER, CENTER);
-      textSize(18);
-      text("Damage", x, y-40);
+      text("Damage Level " + dlvl, x, y-40);
       text("+1", x, y+35);
     }
     if (c == 'h') {
       image(h, x-5, y-5);
-      textAlign(CENTER, CENTER);
-      textSize(18);
-      text("Health", x, y-40);
+      text("Health Level " + hlvl, x, y-40);
       text("+1", x, y+35);
     }
     if (c == 's') {
       image(s, x, y);
-      textAlign(CENTER, CENTER);
-      textSize(18);
-      text("Speed", x, y-40);
+      text("Speed Level " + slvl, x, y-40);
       text("+1", x, y+35);
     }
     fill(0, 0, 255);
