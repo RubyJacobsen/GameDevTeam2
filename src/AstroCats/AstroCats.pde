@@ -9,11 +9,15 @@ Upgrade u1, u2, u3;
 ArrayList<Xp> xps = new ArrayList<Xp>();
 int exp = 0;
 int lvl = 1;
-int expr = lvl*5;
+int expr = lvl*20;
 void setup() {
   size(500, 500);
   p = new Player(260, 160);
   enemies.add(new Enemy(250, 50, 100));
+  enemies.add(new Enemy(250, 400, 100));
+  enemies.add(new Enemy(250, 400, 100));
+  enemies.add(new Enemy(250, 400, 100));
+  enemies.add(new Enemy(250, 400, 100));
   enemies.add(new Enemy(250, 400, 100));
   u1 = new Upgrade(80, 90, 'd');
   u2 = new Upgrade(190, 90, 'h');
@@ -26,7 +30,7 @@ void draw() {
   background(#200329);
   p.display();
   p.move();
-  if (exp >= 5) {
+  if (exp >= expr) {
     u1.display();
     u2.display();
     u3.display();
@@ -41,11 +45,12 @@ void draw() {
         p.gundamage += 5;
       }
       exp = exp-expr;
+      lvl++;
     }
-    if (mousePressed == true && u1.hover() == true || mousePressed == true && u2.hover() == true || mousePressed == true && u3.hover() == true) {
+    //if (mousePressed == true && u1.hover() == true || mousePressed == true && u2.hover() == true || mousePressed == true && u3.hover() == true) {
 
-      exp = 0;
-    }
+      //exp = 0;
+   // }
   }
 
   for (Enemy e : enemies) {
