@@ -41,9 +41,6 @@ class Enemy {
     }
   }
 
-  void death() {
-  }
-
   void move() {
     x += vx/3;
     y += vy/3;
@@ -55,6 +52,4 @@ class Enemy {
     }
   }
 
-  void hit () {
-  }
 }
