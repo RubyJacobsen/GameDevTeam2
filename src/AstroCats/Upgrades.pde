@@ -1,8 +1,8 @@
 class Upgrade {
   // Member Variables
-  int x, y, dlvl, hlvl, slvl;
+  int x, y, dlvl, hlvl, slvl, flvl;
   char c;
-  PImage d, h, s;
+  PImage d, h, s, f;
   color col;
 
   // Constructor
@@ -13,10 +13,12 @@ class Upgrade {
     d = loadImage("tunainspace.png");
     h = loadImage("catnip.png");
     s = loadImage("cucumber.png");
+    f = loadImage("yarnball.png");
     col = #ffffff;
     dlvl = 1;
     hlvl = 1;
     slvl = 1;
+    flvl = 1;
   }
 
   // Memeber Methods
@@ -25,6 +27,7 @@ class Upgrade {
     d.resize(70, 70);
     h.resize(90, 90);
     s.resize(190, 190);
+    f.resize(90,90);
     rectMode(CENTER);
     fill(col);
     rect(x, y, 100, 150);
@@ -48,6 +51,13 @@ class Upgrade {
       image(s, x, y);
       text("Speed Level " + slvl, x, y-50);
       text("+1 m/s", x, y+50);
+    }
+    if (c == 'f') {
+      image(f, x, y);
+      textSize(13);
+      text("Fire Rate Level " + flvl, x, y-50);
+      textSize(15);
+      text("faster", x, y + 50);
     }
     fill(0, 0, 255);
   }

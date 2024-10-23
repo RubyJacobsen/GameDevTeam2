@@ -43,6 +43,7 @@ void draw() {
       }
       if (u1.c == 'd') {
         p.gundamage += 5;
+        u1.dlvl++;
       }
       exp = exp-expr;
       lvl++;
