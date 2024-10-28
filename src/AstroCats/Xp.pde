@@ -6,7 +6,7 @@ class Xp {
   Xp(float x, float y) {
   this.x=x;
   this.y=y;
-  friction=0.05;
+  friction=0.1;
   vx=random(-1,1);
   vy=random(-1,1);
 
