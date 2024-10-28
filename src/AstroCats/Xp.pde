@@ -2,13 +2,14 @@ class Xp {
   
   float x, y, direction;
   float vx, vy, friction;
-
+  float speed;
   Xp(float x, float y) {
   this.x=x;
   this.y=y;
-  friction=0.1;
+  friction=0.05;
   vx=random(-1,1);
   vy=random(-1,1);
+
   }
   void display() {
   rect(x,y,10,10);
