@@ -5,6 +5,7 @@ Projectile p1;
 ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 int m=millis();
+int lastXP;
 Upgrade u1, u2, u3;
 ArrayList<Xp> xps = new ArrayList<Xp>();
 int exp = 0;
@@ -111,12 +112,15 @@ void draw() {
   for (int i=0; i<xps.size(); i++) {
     xps.get(i).display();
     xps.get(i).move(p.x, p.y);
-    if (xps.get(i).crash(p.x, p.y, 1)) {
+    if (xps.get(i).crash(p.x, p.y, 1) & m-lastXP>10) {
+      lastXP=m;
       xps.remove(i);
       exp++;
     }
   }
 }
+
+//movement
   void keyPressed() {
     if (key=='w'||key=='W') {
       //ay=-1;
