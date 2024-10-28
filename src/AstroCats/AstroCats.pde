@@ -2,6 +2,7 @@
 
 Player p;
 Projectile p1;
+Infopanel info;
 ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 int m=millis();
@@ -24,6 +25,7 @@ void setup() {
   u2 = new Upgrade(190, 90, 'h');
   u3 = new Upgrade(300, 90, 's');
   xps.add(new Xp(width/2, height/2));
+  info = new Infopanel(0,100,1);
 }
 
 void draw() {
@@ -31,6 +33,8 @@ void draw() {
   background(#200329);
   p.display();
   p.move();
+  
+  //level and upgrades
   if (exp >= expr) {
     u1.display();
     u2.display();
@@ -39,6 +43,9 @@ void draw() {
     u2.hover();
     u3.hover();
     if (mousePressed == true && u1.hover() == true) {
+      exp = exp-expr;
+      lvl++;
+      info.levelUp();
       if (u1.c == 'h') {
         println("health");
       }
@@ -46,8 +53,7 @@ void draw() {
         p.gundamage += 5;
         u1.dlvl++;
       }
-      exp = exp-expr;
-      lvl++;
+      
     }
     //if (mousePressed == true && u1.hover() == true || mousePressed == true && u2.hover() == true || mousePressed == true && u3.hover() == true) {
 
@@ -118,6 +124,7 @@ void draw() {
       exp++;
     }
   }
+  info.display();
 }
 
 //movement
