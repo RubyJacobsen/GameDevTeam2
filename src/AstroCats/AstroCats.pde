@@ -117,19 +117,42 @@ void draw() {
     }
   }
 }
- void keyPressed() {
+  void keyPressed() {
     if (key=='w'||key=='W') {
       //ay=-1;
-      //vy-=1;
-      println("joweijfowfejwiof");
-    } else if (key=='s'||key=='S') {
+      p.keys[0]=true;
+    }
+    if (key=='s'||key=='S') {
       //ay=1;
-      //vy+=1;
-    } else if (key=='a'||key=='A') {
+      p.keys[1]=true;
+    }
+    if (key=='a'||key=='A') {
       //ax=-1;
-      //vx-=1;
-    } else if (key=='d'||key=='D') {
+      p.keys[2]=true;
+    }
+    if (key=='d'||key=='D') {
       //ax=1;
-      //vx+=1;
+      p.keys[3]=true;
+    }
+  }
+
+  void keyReleased() {
+
+    if (key=='w'||key=='W') {
+      //ay=-1;
+      p.keys[0]=false;
+    }
+    if (key=='s'||key=='S') {
+      //ay=1;
+      p.keys[1]=false;
+    }
+    if (key=='a'||key=='A') {
+      //ax=-1;
+      p.keys[2]=false;
+    }
+    if (key=='d'||key=='D') {
+
+      //ax=1;
+      p.keys[3]=false;
     }
   }

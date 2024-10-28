@@ -3,7 +3,7 @@ class Player {
   float x, y, vy, vx, direction, friction, ay, ax, atkcd, bspeed;
   int bullets, bsize, guncount, gundamage, health, xp, level;
   int lastATK;
-
+  public boolean[] keys = new boolean[4];
   Player(float x, float y) {
     this.x=x;
     this.y=y;
@@ -16,6 +16,9 @@ class Player {
     bsize=50;
     bspeed=5;
     ship = loadImage("Spaceship-1.png");
+    for (int i=0; i<keys.length-1; i++) {
+      keys[i]=false;
+    }
   }
   void display() {
     fill(0, 255, 0);
@@ -45,8 +48,19 @@ class Player {
       vy+=sqrt(abs(vy))*friction;
     }
     //ax=1;
-    keyPressed();
-    keyReleased();
+    
+    if (keys[0]) {
+      vy-=0.5;
+    }
+    if (keys[1]) {
+      vy+=0.5;
+    }
+    if (keys[2]) {
+      vx-=0.5;
+    }
+    if (keys[3]) {
+      vx+=0.5;
+    }
 
     if (x>width+50) {
       x=-50;
@@ -72,42 +86,6 @@ class Player {
   //  }
   //}
 
-  void keyPressed() {
-    if (keyPressed) {
-      if (key=='w'||key=='W') {
-        //ay=-1;
-        vy-=1;
-      }
-      if (key=='s'||key=='S') {
-        //ay=1;
-        vy+=1;
-      }
-      if (key=='a'||key=='A') {
-        //ax=-1;
-        vx-=1;
-      }
-      if (key=='d'||key=='D') {
-        //ax=1;
-        vx+=1;
-      }
-    }
-  }
-  void keyReleased() {
-    if(!keyPressed) {
-    if (key=='w'||key=='W') {
-      //ay=-1;
-      vy-=-1;
-    } else if (key=='s'||key=='S') {
-      //ay=1;
-      vy+=-1;
-    } else if (key=='a'||key=='A') {
-      //ax=-1;
-      vx-=-1;
-    } else if (key=='d'||key=='D') {
-    
-      //ax=1;
-      vx+=-1;
-    }
-    }
-  }
+
 }
+  
