@@ -3,6 +3,7 @@
 Player p;
 Projectile p1;
 Infopanel info;
+Asteroid a1;
 ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 int m=millis();
@@ -26,6 +27,7 @@ void setup() {
   u3 = new Upgrade(300, 90, 's');
   xps.add(new Xp(width/2, height/2));
   info = new Infopanel(0, 100, 1);
+  a1=new Asteroid(100,100,180);
 }
 
 void draw() {
@@ -33,7 +35,8 @@ void draw() {
   background(#200329);
   p.display();
   p.move();
-
+  a1.move();
+  a1.display();
   //level and upgrades
   if (exp >= expr) {
     u1.display();
