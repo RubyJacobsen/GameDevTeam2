@@ -18,8 +18,7 @@ Genre: People suggested open world or platformer, another suggested it be space-
 AstroCats
 
 Quick backstory/story info (you are an editor so you can add whatever you want)
-[
-](https://docs.google.com/document/d/1RE3Bt4OiFEK1LiYbxX2sdgQhCzcvOM26Z1X7oPXeeUo/edit?usp=sharing)
+! [Doc](https://docs.google.com/document/d/1RE3Bt4OiFEK1LiYbxX2sdgQhCzcvOM26Z1X7oPXeeUo/edit?usp=sharing)
 
 Start screen
 ![Start screen](https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/StartScreenGH.png)
