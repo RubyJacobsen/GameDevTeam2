@@ -3,12 +3,12 @@ class Infopanel {
   int health;
 
   int level;
-
+  PImage healthbar;
 
   Infopanel(int initialScore, int initialHealth, int initialLevel) {
     score = initialScore;
     health = initialHealth;
-
+    healthbar= loadImage("HealthBarRJ.png");
     level = initialLevel;
   }
 
@@ -51,7 +51,8 @@ class Infopanel {
     // Display the health
     text("Health: " + health, 20, 50);
     text("Level: " + level, 20, 70);
-    
+    imageMode(CORNER);
+    image(healthbar,-40,-150,560,400);
     // Display the level
     
   }

@@ -1,18 +1,25 @@
 // Ruby Jacobsen | AstroCats | 9 Oct 2024
 
+//Test classes and one ofs
 Player p;
 Projectile p1;
 Infopanel info;
 Asteroid a1;
+
+//Arrays
 ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
-int m=millis();
-int lastXP;
 Upgrade u1, u2, u3;
 ArrayList<Xp> xps = new ArrayList<Xp>();
+
+//Some variables
+int m=millis();
+int lastXP;
 int exp = 0;
 int lvl = 1;
 int expr = lvl*20;
+
+//Images
 void setup() {
   size(500, 500);
   p = new Player(260, 160);
