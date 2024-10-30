@@ -25,7 +25,7 @@ void setup() {
   u2 = new Upgrade(190, 90, 'h');
   u3 = new Upgrade(300, 90, 's');
   xps.add(new Xp(width/2, height/2));
-  info = new Infopanel(0,100,1);
+  info = new Infopanel(0, 100, 1);
 }
 
 void draw() {
@@ -33,7 +33,7 @@ void draw() {
   background(#200329);
   p.display();
   p.move();
-  
+
   //level and upgrades
   if (exp >= expr) {
     u1.display();
@@ -53,12 +53,11 @@ void draw() {
         p.gundamage += 5;
         u1.dlvl++;
       }
-      
     }
     //if (mousePressed == true && u1.hover() == true || mousePressed == true && u2.hover() == true || mousePressed == true && u3.hover() == true) {
 
-      //exp = 0;
-   // }
+    //exp = 0;
+    // }
   }
 
   for (Enemy e : enemies) {
@@ -121,49 +120,64 @@ void draw() {
     if (xps.get(i).crash(p.x, p.y, 1) & m-lastXP>10) {
       lastXP=m;
       xps.remove(i);
-      exp++;
+      exp+=1;
     }
   }
   info.display();
+  //health and xp bars
+  fill(0);
+  rectMode(CENTER);
+  rect(width/2, 59*height/64, 3*width/4, height/32+5);
+
+  rect(width/2, 29*height/32, 3*width/4, height/32);
+  fill(255, 0, 0);
+  rectMode(CORNER);
+  rect(((width/2)-0.5*(0.75*width)+2), (29*height/32)-((height/64)-1), ((float(p.health)/float(p.maxhealth))*(3*width/4)-5), (height/32)-6);
+  fill(0, 0, 255);
+  if (exp<=expr) {
+    rect(((width/2)-0.5*(0.75*width)+1), (59*height/64)-((height/64)-5), (float(exp)/float(expr))*(3*width/4), (height/32)-6);
+  } else {
+    rect(((width/2)-0.5*(0.75*width)+1), (59*height/64)-((height/64)-5), (3*width/4)-4, (height/32)-6);
+  }
 }
 
 //movement
-  void keyPressed() {
-    if (key=='w'||key=='W') {
-      //ay=-1;
-      p.keys[0]=true;
-    }
-    if (key=='s'||key=='S') {
-      //ay=1;
-      p.keys[1]=true;
-    }
-    if (key=='a'||key=='A') {
-      //ax=-1;
-      p.keys[2]=true;
-    }
-    if (key=='d'||key=='D') {
-      //ax=1;
-      p.keys[3]=true;
-    }
+void keyPressed() {
+  if (key=='w'||key=='W') {
+    //ay=-1;
+    p.keys[0]=true;
   }
-
-  void keyReleased() {
-
-    if (key=='w'||key=='W') {
-      //ay=-1;
-      p.keys[0]=false;
-    }
-    if (key=='s'||key=='S') {
-      //ay=1;
-      p.keys[1]=false;
-    }
-    if (key=='a'||key=='A') {
-      //ax=-1;
-      p.keys[2]=false;
-    }
-    if (key=='d'||key=='D') {
-
-      //ax=1;
-      p.keys[3]=false;
-    }
+  if (key=='s'||key=='S') {
+    //ay=1;
+    p.keys[1]=true;
   }
+  if (key=='a'||key=='A') {
+    //ax=-1;
+    p.keys[2]=true;
+  }
+  if (key=='d'||key=='D') {
+    //ax=1;
+    p.keys[3]=true;
+  }
+}
+
+void keyReleased() {
+
+  if (key=='w'||key=='W') {
+    //ay=-1;
+    p.keys[0]=false;
+  }
+  if (key=='s'||key=='S') {
+    //ay=1;
+    p.keys[1]=false;
+  }
+  if (key=='a'||key=='A') {
+    //ax=-1;
+    p.keys[2]=false;
+  }
+  if (key=='d'||key=='D') {
+
+    //ax=1;
+    p.keys[3]=false;
+  }
+}

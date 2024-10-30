@@ -1,7 +1,7 @@
 class Player {
   PImage ship;
   float x, y, vy, vx, direction, friction, ay, ax, atkcd, bspeed;
-  int bullets, bsize, guncount, gundamage, health, xp, level;
+  int bullets, bsize, guncount, gundamage, health,maxhealth, xp, level;
   int lastATK;
   public boolean[] keys = new boolean[4];
   Player(float x, float y) {
@@ -12,6 +12,7 @@ class Player {
     guncount=1;
     gundamage=10;
     health=100;
+    maxhealth=health;
     level=1;
     bsize=50;
     bspeed=5;

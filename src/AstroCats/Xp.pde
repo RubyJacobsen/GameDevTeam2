@@ -7,8 +7,8 @@ class Xp {
   this.x=x;
   this.y=y;
   friction=0.1;
-  vx=random(-1,1);
-  vy=random(-1,1);
+  vx=0;
+  vy=0;
 
   }
   void display() {

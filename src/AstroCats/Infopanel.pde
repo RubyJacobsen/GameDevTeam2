@@ -50,10 +50,9 @@ class Infopanel {
 
     // Display the health
     text("Health: " + health, 20, 50);
-
-
-
-    // Display the level
     text("Level: " + level, 20, 70);
+    
+    // Display the level
+    
   }
 }
