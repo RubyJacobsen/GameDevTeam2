@@ -16,7 +16,7 @@ class Projectile {
     if (f) {
       c=#0000FF;
     } else {
-      c=#ff0000;
+      c=#FF0000;
     }
   }
   void display() {

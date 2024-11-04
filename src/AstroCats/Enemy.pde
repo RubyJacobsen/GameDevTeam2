@@ -4,6 +4,9 @@ class Enemy {
   int size=45;
   PImage e1, e2;
   float e = random(0, 2);
+  int atkCD=3000;//in milliseconds
+  int lastATK = int(random(0,atkCD));
+  float direction;
 
   Enemy(float ex, float ey, int h) {
     x = ex;
@@ -19,7 +22,8 @@ class Enemy {
   void display(float px, float py) {
     pushMatrix();
     translate(x, y);
-    rotate(atan2(y-py, x-px));
+    direction=(atan2(y-py, x-px))+PI;
+    rotate(direction);
     fill(255, 0, 0);
     if (e<1) {
       image(e1, 0, 0, size*1.5, size*1.5);
@@ -51,5 +55,11 @@ class Enemy {
       vy *= -1;
     }
   }
-
+  boolean fire(int time) {
+    if(time-lastATK>atkCD) {
+      lastATK=time;
+      atkCD=int(random(atkCD-atkCD/4,atkCD+atkCD/4));
+      return true;
+    } else {return false;}
+  }
 }

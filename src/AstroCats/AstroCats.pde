@@ -69,10 +69,13 @@ void draw() {
     //exp = 0;
     // }
   }
-
+  //eeeenmie logic
   for (Enemy e : enemies) {
     e.display(p.x, p.y);
     e.move();
+    if(e.fire(m)){
+    projectiles.add(new Projectile(false, e.x, e.y, 7, e.direction, 5, 30));
+    }
   }
 
   //Attack Cooldown, fire bullet
@@ -139,7 +142,7 @@ void draw() {
   rectMode(CENTER);
  
 
-  rect(width/2, 29*height/32, 3*width/4, height/32);
+  rect(width/2, 59*height/64, 3*width/4, height/32);
   fill(255, 0, 0);
   rectMode(CORNER);
   strokeWeight(0);

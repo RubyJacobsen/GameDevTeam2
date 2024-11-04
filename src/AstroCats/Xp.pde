@@ -18,8 +18,8 @@ class Xp {
   }
   void move(float tx, float ty) {
     direction=atan2(ty-y,tx-x);
-    vy+=sin(direction)*random(0,1);
-    vx+=cos(direction)*random(0,1);
+    vy+=sin(direction)*random(1);
+    vx+=cos(direction)*random(1);
     x+=vx;
     //vx+=ax-((vx*friction));
     if (vx>0) {
