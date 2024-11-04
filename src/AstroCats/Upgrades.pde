@@ -50,6 +50,7 @@ class Upgrade {
     if (c == 's') {
       image(s, x, y);
       text("Speed Level " + slvl, x, y-50);
+      textSize(15);
       text("+1 m/s", x, y+50);
     }
     if (c == 'f') {
