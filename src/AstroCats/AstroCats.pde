@@ -153,16 +153,18 @@ void draw() {
       exp+=1;
     }
   }
-  info.display();
+  
   //health and xp bars
   fill(0);
   rectMode(CENTER);
-  rect(width/2, 59*height/64, 3*width/4, height/32+5);
+ 
 
   rect(width/2, 29*height/32, 3*width/4, height/32);
   fill(255, 0, 0);
   rectMode(CORNER);
-  rect(((width/2)-0.5*(0.75*width)+2), (29*height/32)-((height/64)-1), ((float(p.health)/float(p.maxhealth))*(3*width/4)-5), (height/32)-6);
+  strokeWeight(0);
+  rect(50, 33, ((float(p.health)/float(p.maxhealth))*246), 30);
+  info.display();
   fill(0, 0, 255);
   if (exp<=expr) {
     rect(((width/2)-0.5*(0.75*width)+1), (59*height/64)-((height/64)-5), (float(exp)/float(expr))*(3*width/4), (height/32)-6);
