@@ -18,6 +18,10 @@ int lastXP;
 int exp = 0;
 int lvl = 1;
 int expr = lvl*20;
+float r1 = random(4);
+//float r2 = random(4);
+//float r3 = random(4);
+char up1, up2, up3;
 
 //Images
 void setup() {
@@ -29,8 +33,8 @@ void setup() {
   enemies.add(new Enemy(250, 400, 100));
   enemies.add(new Enemy(250, 400, 100));
   enemies.add(new Enemy(250, 400, 100));
-  u1 = new Upgrade(80, 90, 'p');
-  u2 = new Upgrade(190, 90, 'h');
+  u1 = new Upgrade(80, 90, up1);
+  u2 = new Upgrade(190, 90, 'f');
   u3 = new Upgrade(300, 90, 'd');
   xps.add(new Xp(width/2, height/2));
   info = new Infopanel(0, 100, 1);
@@ -46,6 +50,34 @@ void draw() {
   a1.display();
   //level and upgrades
   if (exp >= expr) {
+    if (r1 < 1) {
+      up1 = 'p';
+    } else if (r1 < 2) {
+      up1 = 'd';
+    } else if (r1 < 3) {
+      up1 = 's';
+    } else if (r1 < 4) {
+      up1 = 'f';
+    }
+    //if (r2 < 1) {
+    //  up2 = 'p';
+    //} else if (r2 < 2) {
+    //  up2 = 'd';
+    //} else if (r2 < 3) {
+    //  up2 = 's';
+    //} else if (r2 < 4) {
+    //  up2 = 'f';
+    //}
+    //if (r3 < 1) {
+    //  up3 = 'p';
+    //} else if (r3 < 2) {
+    //  up3 = 'd';
+    //} else if (r3 < 3) {
+    //  up3 = 's';
+    //} else if (r3 < 4) {
+    //  up3 = 'f';
+    //}
+
     u1.display();
     u2.display();
     u3.display();
@@ -84,6 +116,14 @@ void draw() {
         p.gundamage += 5;
         u1.dlvl++;
       }
+      if (u2.c == 'f') {
+        p.atkcd -= 0.02;
+        u1.flvl++;
+      }
+      if (u2.c == 'p') {
+        p.bspeed += 1.5;
+        u1.plvl++;
+      }
     }
     if (mousePressed == true && u3.hover() == true) {
       exp = exp-expr;
@@ -96,14 +136,27 @@ void draw() {
         p.gundamage += 5;
         u1.dlvl++;
       }
+      if (u3.c == 'f') {
+        p.atkcd -= 0.02;
+        u1.flvl++;
+      }
+      if (u3.c == 'p') {
+        p.bspeed += 1.5;
+        u1.plvl++;
+      }
     }
   }
   //eeeenmie logic
   for (Enemy e : enemies) {
     e.display(p.x, p.y);
     e.move();
+<<<<<<< Updated upstream
     if(e.fire(m)){
     projectiles.add(new Projectile(false, e.x, e.y, 4, e.direction, 5, 30));
+=======
+    if (e.fire(m)) {
+      projectiles.add(new Projectile(false, e.x, e.y, 7, e.direction, 5, 30));
+>>>>>>> Stashed changes
     }
   }
 
