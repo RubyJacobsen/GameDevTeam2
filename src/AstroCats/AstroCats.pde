@@ -142,6 +142,7 @@ void draw() {
   rect(width/2, 29*height/32, 3*width/4, height/32);
   fill(255, 0, 0);
   rectMode(CORNER);
+  strokeWeight(0);
   rect(50, 33, ((float(p.health)/float(p.maxhealth))*246), 30);
   info.display();
   fill(0, 0, 255);
