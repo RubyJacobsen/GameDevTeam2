@@ -103,7 +103,7 @@ void draw() {
     e.display(p.x, p.y);
     e.move();
     if(e.fire(m)){
-    projectiles.add(new Projectile(false, e.x, e.y, 7, e.direction, 5, 30));
+    projectiles.add(new Projectile(false, e.x, e.y, 4, e.direction, 5, 30));
     }
   }
 
@@ -159,7 +159,7 @@ void draw() {
       p.health-=projectiles.get(i).damage;
       projectiles.remove(i);
     }
-    }s
+    }
     //player and projectile die on collision
     
   }
