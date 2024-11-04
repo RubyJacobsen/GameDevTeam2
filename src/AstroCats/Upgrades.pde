@@ -1,8 +1,8 @@
 class Upgrade {
   // Member Variables
-  int x, y, dlvl, hlvl, slvl, flvl;
+  int x, y, dlvl, hlvl, slvl, flvl, plvl;
   char c;
-  PImage d, h, s, f;
+  PImage d, h, s, f, p;
   color col;
 
   // Constructor
@@ -14,6 +14,7 @@ class Upgrade {
     h = loadImage("catnip.png");
     s = loadImage("cucumber.png");
     f = loadImage("yarnball.png");
+    p = loadImage("FirecatbowlEH.png");
     col = #ffffff;
     dlvl = 1;
     hlvl = 1;
@@ -54,7 +55,14 @@ class Upgrade {
       textSize(13);
       text("Fire Rate Level " + flvl, x, y-50);
       textSize(15);
-      text("+4%", x, y + 50);
+      text("+4%", x, y+50);
+    }
+    if (c == 'p') {
+      image(p, x, y, 85, 85);
+      textSize(13);
+      text("Shot Velocity Level " + plvl, x, y-50);
+      textSize(15);
+      text("+30%", x, y+50);
     }
     fill(0, 0, 255);
   }
@@ -63,8 +71,7 @@ class Upgrade {
     if (mouseX < x+50 && mouseX > x-50 && mouseY < y+75 && mouseY > y-75) {
       col = #d6d6d6;
       return true;
-    }
-    else col = #ffffff;
+    } else col = #ffffff;
     return false;
   }
 }
