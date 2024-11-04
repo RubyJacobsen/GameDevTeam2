@@ -54,14 +54,14 @@ class Upgrade {
       image(f, x, y, 150, 150);
       textSize(13);
       text("Fire Rate Level " + flvl, x, y-50);
-      textSize(15);
+      textSize(17);
       text("+4%", x, y+50);
     }
     if (c == 'p') {
       image(p, x, y, 85, 85);
       textSize(13);
       text("Shot Velocity Level " + plvl, x, y-50);
-      textSize(15);
+      textSize(17);
       text("+30%", x, y+50);
     }
     fill(0, 0, 255);
