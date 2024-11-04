@@ -124,7 +124,6 @@ void draw() {
     }
     //Projectile and enemy die on collision
     for (int j=0; j<enemies.size(); j++) {
-      //println(j);
       if (i>=projectiles.size()) {
         break;
       }
@@ -149,7 +148,16 @@ void draw() {
           enemies.remove(j);
         }
       }
+      
     }
+    if( i<projectiles.size()) {
+    if (projectiles.get(i).crash(p.x, p.y, 50) & !projectiles.get(i).f ){
+      p.health-=projectiles.get(i).damage;
+      projectiles.remove(i);
+    }
+    }s
+    //player and projectile die on collision
+    
   }
   //Logic for XP
   for (int i=0; i<xps.size(); i++) {
