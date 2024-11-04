@@ -1,14 +1,14 @@
 class Player {
   PImage ship;
   float x, y, vy, vx, direction, friction, ay, ax, atkcd, bspeed;
-  int bullets, bsize, guncount, gundamage, health,maxhealth, xp, level;
+  int bullets, bsize, guncount, gundamage, health, maxhealth, xp, level;
   int lastATK;
   public boolean[] keys = new boolean[4];
   Player(float x, float y) {
     this.x=x;
     this.y=y;
-    friction=0.1; //to be multiplied by current velocity and subtracted by acceleration
-    atkcd=0.3;//measured in seconds
+    friction=0.12; //to be multiplied by current velocity and subtracted by acceleration
+    atkcd=0.5;//measured in seconds
     guncount=1;
     gundamage=10;
     health=100;
