@@ -36,9 +36,9 @@ class Infopanel {
   // Display the panel with information
   void display() {
     // Draw background for info panel
-    fill(50, 50, 50, 150); // Semi-transparent background
-    rectMode(CORNER);
-    rect(10, 10, 200, 80);
+    //fill(50, 50, 50, 150); // Semi-transparent background
+    //rectMode(CORNER);
+    //rect(10, 10, 200, 80);
 
     // Set text properties
     fill(255);

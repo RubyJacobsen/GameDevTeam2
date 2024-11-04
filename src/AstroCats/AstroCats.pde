@@ -137,7 +137,7 @@ void draw() {
   //health and xp bars
   fill(0);
   rectMode(CENTER);
-  rect(width/2, 59*height/64, 3*width/4, height/32+5);
+ 
 
   rect(width/2, 29*height/32, 3*width/4, height/32);
   fill(255, 0, 0);
