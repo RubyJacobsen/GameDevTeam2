@@ -3,16 +3,17 @@ class Xp {
   float x, y, direction;
   float vx, vy, friction;
   float speed;
+  PImage xp;
   Xp(float x, float y) {
   this.x=x;
   this.y=y;
   friction=0.1;
   vx=0;
   vy=0;
-
+  xp = loadImage("exppixelRJ.png");
   }
   void display() {
-  rect(x,y,10,10);
+  image(xp, x, y, 30, 30);
   
   }
   void move(float tx, float ty) {

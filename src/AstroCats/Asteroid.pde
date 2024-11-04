@@ -1,7 +1,9 @@
 class Asteroid extends Enemy {
   int m;
+  PImage a1, a2, a3;
   Asteroid(float x, float y, int hp) {
     super(x, y, hp);
+    a3 = loadImage("asteroid3RJ.png");
   }
   void display() {
     m=millis();
@@ -10,7 +12,7 @@ class Asteroid extends Enemy {
     rotate(radians(m/50));
     fill(255, 0, 0);
     if (e<1) {
-      image(e1, 0, 0, size*1.5, size*1.5);
+      image(a3, 0, 0, size*1.5, size*1.5);
     } else if (e < 2) {
       image(e2, 0, 0, size*1.5, size*1.5);
     }
