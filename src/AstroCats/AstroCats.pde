@@ -29,7 +29,7 @@ void setup() {
   enemies.add(new Enemy(250, 400, 100));
   enemies.add(new Enemy(250, 400, 100));
   enemies.add(new Enemy(250, 400, 100));
-  u1 = new Upgrade(80, 90, 'f');
+  u1 = new Upgrade(80, 90, 'p');
   u2 = new Upgrade(190, 90, 'h');
   u3 = new Upgrade(300, 90, 'd');
   xps.add(new Xp(width/2, height/2));
@@ -67,6 +67,10 @@ void draw() {
       if (u1.c == 'f') {
         p.atkcd -= 0.02;
         u1.flvl++;
+      }
+      if (u1.c == 'p') {
+        p.bspeed += 1.5;
+        u1.plvl++;
       }
     }
     if (mousePressed == true && u2.hover() == true) {
