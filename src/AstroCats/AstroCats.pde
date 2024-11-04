@@ -29,12 +29,12 @@ void setup() {
   enemies.add(new Enemy(250, 400, 100));
   enemies.add(new Enemy(250, 400, 100));
   enemies.add(new Enemy(250, 400, 100));
-  u1 = new Upgrade(80, 90, 's');
+  u1 = new Upgrade(80, 90, 'f');
   u2 = new Upgrade(190, 90, 'h');
   u3 = new Upgrade(300, 90, 'd');
   xps.add(new Xp(width/2, height/2));
   info = new Infopanel(0, 100, 1);
-  a1=new Asteroid(100,100,180);
+  a1=new Asteroid(100, 100, 180);
 }
 
 void draw() {
@@ -58,10 +58,15 @@ void draw() {
       info.levelUp();
       if (u1.c == 's') {
         p.friction -= 0.005;
+        u1.slvl++;
       }
       if (u1.c == 'd') {
         p.gundamage += 5;
         u1.dlvl++;
+      }
+      if (u1.c == 'f') {
+        p.atkcd -= 0.02;
+        u1.flvl++;
       }
     }
     if (mousePressed == true && u2.hover() == true) {
@@ -153,11 +158,11 @@ void draw() {
       exp+=1;
     }
   }
-  
+
   //health and xp bars
   fill(0);
   rectMode(CENTER);
- 
+
 
   rect(width/2, 29*height/32, 3*width/4, height/32);
   fill(255, 0, 0);

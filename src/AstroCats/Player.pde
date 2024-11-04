@@ -8,7 +8,7 @@ class Player {
     this.x=x;
     this.y=y;
     friction=0.12; //to be multiplied by current velocity and subtracted by acceleration
-    atkcd=0.3;//measured in seconds
+    atkcd=0.5;//measured in seconds
     guncount=1;
     gundamage=10;
     health=100;
