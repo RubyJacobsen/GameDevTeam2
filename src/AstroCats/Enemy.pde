@@ -4,7 +4,7 @@ class Enemy {
   int size=45;
   PImage e1, e2;
   float e = random(0, 2);
-  int atkCD=3000;//in milliseconds
+  int atkCD=5000;//in milliseconds
   int lastATK;
   float direction;
 
