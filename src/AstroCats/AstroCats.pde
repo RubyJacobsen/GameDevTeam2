@@ -51,6 +51,7 @@ void draw() {
     image(startbutton, width/2, height/2);
     if (mousePressed) {
       playing=true;
+      p.health=100;
     }
   } else {
     m=millis();
@@ -216,6 +217,7 @@ void draw() {
         if (projectiles.get(i).crash(p.x, p.y, 50) & !projectiles.get(i).f ) {
           p.health-=projectiles.get(i).damage;
           projectiles.remove(i);
+          if(p.health<0) {playing=false;}
         }
       }
       //player and projectile die on collision
