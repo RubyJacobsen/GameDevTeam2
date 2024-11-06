@@ -18,10 +18,10 @@ int lastXP;
 int exp = 0;
 int lvl = 1;
 int expr = lvl*20;
-float r1 = random(4);
+//float r1 = random(4);
 //float r2 = random(4);
 //float r3 = random(4);
-char up1, up2, up3;
+//char up1, up2, up3;
 
 //Images
 void setup() {
@@ -33,9 +33,19 @@ void setup() {
   enemies.add(new Enemy(250, 400, 100));
   enemies.add(new Enemy(250, 400, 100));
   enemies.add(new Enemy(250, 400, 100));
-  u1 = new Upgrade(80, 90, up1);
-  u2 = new Upgrade(190, 90, 'f');
-  u3 = new Upgrade(300, 90, 'd');
+  //if (r1 < 1) {
+  //  up1 = 'p';
+  //} else if (r1 < 2) {
+  //  up1 = 'd';
+  //} else if (r1 < 3) {
+  //  up1 = 's';
+  //} else if (r1 < 4) {
+  //  up1 = 'f';
+  //}
+  // ill do random later, after adding more upgrades
+  u1 = new Upgrade(80, 90, 'd');
+  u2 = new Upgrade(190, 90, 'r');
+  u3 = new Upgrade(300, 90, 's');
   xps.add(new Xp(width/2, height/2));
   info = new Infopanel(0, 100, 1);
   a1=new Asteroid(100, 100, 180);
@@ -50,15 +60,7 @@ void draw() {
   a1.display();
   //level and upgrades
   if (exp >= expr) {
-    if (r1 < 1) {
-      up1 = 'p';
-    } else if (r1 < 2) {
-      up1 = 'd';
-    } else if (r1 < 3) {
-      up1 = 's';
-    } else if (r1 < 4) {
-      up1 = 'f';
-    }
+
     //if (r2 < 1) {
     //  up2 = 'p';
     //} else if (r2 < 2) {
@@ -93,7 +95,7 @@ void draw() {
         u1.slvl++;
       }
       if (u1.c == 'd') {
-        p.gundamage += 5;
+        p.gundamage += 7;
         u1.dlvl++;
       }
       if (u1.c == 'f') {
@@ -103,6 +105,11 @@ void draw() {
       if (u1.c == 'p') {
         p.bspeed += 1.5;
         u1.plvl++;
+      }
+      if (u1.c == 'h') {
+        p.health += 15;
+        p.maxhealth += 15;
+        u1.hlvl++;
       }
     }
     if (mousePressed == true && u2.hover() == true) {
@@ -124,6 +131,11 @@ void draw() {
         p.bspeed += 1.5;
         u1.plvl++;
       }
+      if (u2.c == 'h') {
+        p.health += 15;
+        p.maxhealth += 15;
+        u1.hlvl++;
+      }
     }
     if (mousePressed == true && u3.hover() == true) {
       exp = exp-expr;
@@ -144,6 +156,11 @@ void draw() {
         p.bspeed += 1.5;
         u1.plvl++;
       }
+      if (u3.c == 'h') {
+        p.health += 15;
+        p.maxhealth += 15;
+        u1.hlvl++;
+      }
     }
   }
   //eeeenmie logic
@@ -151,11 +168,9 @@ void draw() {
     e.display(p.x, p.y);
     e.move();
 
-    if(e.fire(m)){
-    projectiles.add(new Projectile(false, e.x, e.y, 4, e.direction, 5, 30));
-
-    
-  }
+    if (e.fire(m)) {
+      projectiles.add(new Projectile(false, e.x, e.y, 4, e.direction, 5, 30));
+    }
   }
   //Attack Cooldown, fire bullet
   if (mousePressed) {
@@ -202,16 +217,14 @@ void draw() {
           enemies.remove(j);
         }
       }
-      
     }
-    if( i<projectiles.size()) {
-    if (projectiles.get(i).crash(p.x, p.y, 50) & !projectiles.get(i).f ){
-      p.health-=projectiles.get(i).damage;
-      projectiles.remove(i);
-    }
+    if ( i<projectiles.size()) {
+      if (projectiles.get(i).crash(p.x, p.y, 50) & !projectiles.get(i).f ) {
+        p.health-=projectiles.get(i).damage;
+        projectiles.remove(i);
+      }
     }
     //player and projectile die on collision
-    
   }
   //Logic for XP
   for (int i=0; i<xps.size(); i++) {

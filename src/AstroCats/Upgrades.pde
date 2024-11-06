@@ -1,25 +1,30 @@
 class Upgrade {
   // Member Variables
-  int x, y, dlvl, hlvl, slvl, flvl, plvl;
+  int x, y, dlvl, hlvl, slvl, flvl, plvl, rlvl;
   char c;
-  PImage d, h, s, f, p;
+  PImage d, h, s, f, p, r;
   color col;
+  float t = random(4);
+  float a = random(2);
 
   // Constructor
   Upgrade(int x, int y, char c) {
     this.x=x;
     this.y=y;
     this.c = c;
-    d = loadImage("tunainspace.png");
+    d = loadImage("projectileRJ.png");
     h = loadImage("catnip.png");
     s = loadImage("cucumber.png");
     f = loadImage("yarnball.png");
     p = loadImage("FirecatbowlEH.png");
+    r = loadImage("tunainspace.png");
     col = #ffffff;
     dlvl = 1;
     hlvl = 1;
     slvl = 1;
     flvl = 1;
+    plvl = 1;
+    rlvl = 1;
   }
 
   // Memeber Methods
@@ -31,11 +36,11 @@ class Upgrade {
     fill(0);
     textAlign(CENTER, CENTER);
     if (c == 'd') {
-      image(d, x, y, 70, 70);
+      image(d, x, y, 170, 170);
       textSize(13);
       text("Damage Level " + dlvl, x, y-50);
       textSize(15);
-      text("+5 Damage", x, y+50);
+      text("+7 Damage", x, y+50);
     }
     if (c == 'h') {
       image(h, x-7, y-5, 90, 90);
@@ -63,6 +68,13 @@ class Upgrade {
       text("Shot Velocity Level " + plvl, x, y-50);
       textSize(17);
       text("+30%", x, y+50);
+    }
+    if (c == 'r') {
+      image(r, x, y, 70, 70);
+      textSize(13);
+      text("Healh Regen Level " + rlvl, x, y-50);
+      textSize(15);
+      text("more", x, y+50);
     }
     fill(0, 0, 255);
   }
