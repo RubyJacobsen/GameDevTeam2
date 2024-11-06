@@ -6,6 +6,7 @@ class Player {
   public boolean[] keys = new boolean[4];
   Player(float x, float y) {
     this.x=x;
+    //e
     this.y=y;
     friction=0.12; //to be multiplied by current velocity and subtracted by acceleration
     atkcd=0.5;//measured in seconds
