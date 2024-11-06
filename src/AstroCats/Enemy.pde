@@ -58,7 +58,7 @@ class Enemy {
   boolean fire(int time) {
     if(time-lastATK>atkCD) {
       lastATK=time;
-      atkCD=int(random(atkCD-atkCD/4,atkCD+atkCD/4));
+      //atkCD=int(random(atkCD-atkCD/4,atkCD+atkCD/4));
       return true;
     } else {return false;}
   }

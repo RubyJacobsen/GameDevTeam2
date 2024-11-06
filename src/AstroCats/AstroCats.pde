@@ -150,16 +150,13 @@ void draw() {
   for (Enemy e : enemies) {
     e.display(p.x, p.y);
     e.move();
-<<<<<<< Updated upstream
+
     if(e.fire(m)){
     projectiles.add(new Projectile(false, e.x, e.y, 4, e.direction, 5, 30));
-=======
-    if (e.fire(m)) {
-      projectiles.add(new Projectile(false, e.x, e.y, 7, e.direction, 5, 30));
->>>>>>> Stashed changes
-    }
-  }
 
+    
+  }
+  }
   //Attack Cooldown, fire bullet
   if (mousePressed) {
     if (m-p.lastATK>p.atkcd*1000) {
