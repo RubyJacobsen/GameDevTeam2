@@ -18,7 +18,12 @@ int lastXP;
 int exp = 0;
 int lvl = 1;
 int expr = lvl*20;
+<<<<<<< Updated upstream
 //float r1 = random(4);
+=======
+int wave=1;
+float r1 = random(4);
+>>>>>>> Stashed changes
 //float r2 = random(4);
 //float r3 = random(4);
 <<<<<<< HEAD
@@ -261,6 +266,15 @@ void draw() {
     a1.move();
     a1.display();
     //level and upgrades
+    if(enemies.size()==0) {
+    wave++;
+    float tempx=random(width);
+    float tempy=random(height);
+    int tempe=int(random(2,4));
+    for(int i=0; i<tempe*wave;i++) {
+    enemies.add(new Enemy(tempx, tempy, wave+100));
+    }
+    }
     if (exp >= expr) {
       if (r1 < 1) {
         up1 = 'p';
