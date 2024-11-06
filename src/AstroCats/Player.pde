@@ -1,6 +1,6 @@
 class Player {
   PImage ship;
-  float x, y, vy, vx, direction, friction, ay, ax, atkcd, bspeed;
+  float x, y, vy, vx, direction, friction, ay, ax, atkcd, bspeed, regen;
   int bullets, bsize, guncount, gundamage, health, maxhealth, xp, level;
   int lastATK;
   public boolean[] keys = new boolean[4];
@@ -17,6 +17,7 @@ class Player {
     level=1;
     bsize=50;
     bspeed=5;
+    regen = 0.5;
     ship = loadImage("Spaceship-1.png");
     for (int i=0; i<keys.length-1; i++) {
       keys[i]=false;

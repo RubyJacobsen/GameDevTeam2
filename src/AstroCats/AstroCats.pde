@@ -52,7 +52,7 @@ void setup() {
   //}
   // ill do random later, after adding more upgrades
   u1 = new Upgrade(80, 90, 'd');
-  u2 = new Upgrade(190, 90, 'r');
+  u2 = new Upgrade(190, 90, 'f');
   u3 = new Upgrade(300, 90, 's');
   xps.add(new Xp(width/2, height/2));
   info = new Infopanel(0, 100, 1);
@@ -60,7 +60,7 @@ void setup() {
 }
 
 void draw() {
-  
+
 
   if (!playing) {
     background(#000000);
@@ -68,16 +68,17 @@ void draw() {
     image(startbutton, width/2, height/2);
     if (mousePressed) {
       playing=true;
-      p.health=100;
+      p = new Player(width/2, height/2);
+      wave = 1;
     }
   } else {
     m=millis();
-  background(#200329);
-  p.display();
-  p.move();
-  a1.move();
-  a1.display();
-  //level and upgrades
+    background(#200329);
+    p.display();
+    p.move();
+    a1.move();
+    a1.display();
+    //level and upgrades
     if (enemies.size()==0) {
       wave++;
       float tempx=random(width);
@@ -88,34 +89,6 @@ void draw() {
       }
     }
     if (exp >= expr) {
-      if (r1 < 1) {
-        up1 = 'p';
-      } else if (r1 < 2) {
-        up1 = 'd';
-      } else if (r1 < 3) {
-        up1 = 's';
-      } else if (r1 < 4) {
-        up1 = 'f';
-      }
-      //if (r2 < 1) {
-      //  up2 = 'p';
-      //} else if (r2 < 2) {
-      //  up2 = 'd';
-      //} else if (r2 < 3) {
-      //  up2 = 's';
-      //} else if (r2 < 4) {
-      //  up2 = 'f';
-      //}
-      //if (r3 < 1) {
-      //  up3 = 'p';
-      //} else if (r3 < 2) {
-      //  up3 = 'd';
-      //} else if (r3 < 3) {
-      //  up3 = 's';
-      //} else if (r3 < 4) {
-      //  up3 = 'f';
-      //}
-
       u1.display();
       u2.display();
       u3.display();
@@ -127,7 +100,7 @@ void draw() {
         lvl++;
         info.levelUp();
         if (u1.c == 's') {
-          p.friction -= 0.005;
+          p.friction -= p.friction*0.03;
           u1.slvl++;
         }
         if (u1.c == 'd') {
@@ -135,12 +108,17 @@ void draw() {
           u1.dlvl++;
         }
         if (u1.c == 'f') {
-          p.atkcd -= 0.02;
+          p.atkcd -= p.atkcd*0.04;
           u1.flvl++;
         }
         if (u1.c == 'p') {
           p.bspeed += 1.5;
           u1.plvl++;
+        }
+        if (u1.c == 'h') {
+          p.health += 15;
+          p.maxhealth += 15;
+          u1.hlvl++;
         }
       }
       if (mousePressed == true && u2.hover() == true) {
@@ -162,6 +140,11 @@ void draw() {
           p.bspeed += 1.5;
           u1.plvl++;
         }
+        if (u2.c == 'h') {
+          p.health += 15;
+          p.maxhealth += 15;
+          u2.hlvl++;
+        }
       }
       if (mousePressed == true && u3.hover() == true) {
         exp = exp-expr;
@@ -181,6 +164,11 @@ void draw() {
         if (u3.c == 'p') {
           p.bspeed += 1.5;
           u1.plvl++;
+        }
+        if (u3.c == 'h') {
+          p.health += 15;
+          p.maxhealth += 15;
+          u3.hlvl++;
         }
       }
     }
