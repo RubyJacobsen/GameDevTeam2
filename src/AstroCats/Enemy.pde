@@ -5,7 +5,7 @@ class Enemy {
   PImage e1, e2;
   float e = random(0, 2);
   int atkCD=3000;//in milliseconds
-  int lastATK = int(random(0,atkCD));
+  int lastATK;
   float direction;
 
   Enemy(float ex, float ey, int h) {
@@ -18,6 +18,7 @@ class Enemy {
     e = random(0, 2);
     vx = random(-5, 5);
     vy = random(-5, 5);
+    lastATK=int(random(0,atkCD))+millis();
   }
   void display(float px, float py) {
     pushMatrix();

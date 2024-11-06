@@ -22,10 +22,13 @@ float r1 = random(4);
 //float r2 = random(4);
 //float r3 = random(4);
 char up1, up2, up3;
+boolean playing = false;
+PImage startbutton;
 
 //Images
 void setup() {
   size(500, 500);
+  startbutton = loadImage("StartButton.png");
   p = new Player(260, 160);
   enemies.add(new Enemy(250, 50, 100));
   enemies.add(new Enemy(250, 400, 100));
@@ -42,6 +45,15 @@ void setup() {
 }
 
 void draw() {
+  if(!playing) {
+  background(#000000);
+  image(startbutton, width/2,height/2);
+  if(mousePressed) {
+  playing=true;
+  }
+  
+  }
+  else {
   m=millis();
   background(#200329);
   p.display();
@@ -152,7 +164,7 @@ void draw() {
     e.move();
 
     if(e.fire(m)){
-    projectiles.add(new Projectile(false, e.x, e.y, 4, e.direction, 5, 30));
+    projectiles.add(new Projectile(false, e.x, e.y, 4, e.direction+random(-PI/8,PI/8), 5, 30));
 
     
   }
@@ -217,7 +229,7 @@ void draw() {
   for (int i=0; i<xps.size(); i++) {
     xps.get(i).display();
     xps.get(i).move(p.x, p.y);
-    if (xps.get(i).crash(p.x, p.y, 1) & m-lastXP>10) {
+    if (xps.get(i).crash(p.x, p.y, 10) & m-lastXP>10) {
       lastXP=m;
       xps.remove(i);
       exp+=1;
@@ -242,7 +254,7 @@ void draw() {
     rect(((width/2)-0.5*(0.75*width)+1), (59*height/64)-((height/64)-5), (3*width/4)-4, (height/32)-6);
   }
 }
-
+}
 //movement
 void keyPressed() {
   if (key=='w'||key=='W') {
