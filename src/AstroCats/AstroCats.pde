@@ -30,7 +30,7 @@ boolean playing = false;
 
 //Files
 PImage startbutton;
-SoundFile bgm;
+SoundFile bgm, edead, lvlup, pdead, pew, collect, start;
 
 
 //Images
@@ -61,7 +61,13 @@ void setup() {
   info = new Infopanel(0, 100, 1);
   a1=new Asteroid(100, 100, 180);
   bgm=new SoundFile(this, "mixkit-POTENTIALbackground.wav");
-  bgm.play();
+  bgm.loop();
+  edead = new SoundFile(this, "mixkit-smallexplosionEH-2759.wav");
+  collect = new SoundFile(this, "mixkit-acheivementsoundEH.wav");
+  pdead = new SoundFile(this, "mixkit-largerexplosionEH-1702.wav");
+  pew = new SoundFile(this, "mixkitsmall-lasersoundEH.wav");
+  lvlup = new SoundFile(this, "mixkit-upgradeEH.wav");
+  start = new SoundFile(this, "mixkit-spaceship-soundEH.wav");
 }
 
 void draw() {
@@ -73,6 +79,7 @@ void draw() {
     image(startbutton, width/2, height/2);
     if (mousePressed) {
       playing=true;
+      start.play();
       p = new Player(width/2, height/2);
       wave = 1;
     }
@@ -86,14 +93,15 @@ void draw() {
     //level and upgrades
     if (enemies.size()==0) {
       wave++;
-      float tempx=random(width);
-      float tempy=random(height);
+      float tempx=random(width-10);
+      float tempy=random(height-10);
       int tempe=int(random(2, 4));
       for (int i=0; i<tempe*wave; i++) {
         enemies.add(new Enemy(tempx, tempy, wave+100));
       }
     }
     if (exp >= expr) {
+      
       u1.display();
       u2.display();
       u3.display();
@@ -125,6 +133,7 @@ void draw() {
           p.maxhealth += 15;
           u1.hlvl++;
         }
+        lvlup.play();
       }
       if (mousePressed == true && u2.hover() == true) {
         exp = exp-expr;
@@ -150,6 +159,7 @@ void draw() {
           p.maxhealth += 15;
           u2.hlvl++;
         }
+        lvlup.play();
       }
       if (mousePressed == true && u3.hover() == true) {
         exp = exp-expr;
@@ -175,6 +185,7 @@ void draw() {
           p.maxhealth += 15;
           u3.hlvl++;
         }
+        lvlup.play();
       }
     }
     //eeeenmie logic
@@ -191,6 +202,7 @@ void draw() {
       if (m-p.lastATK>p.atkcd*1000) {
         projectiles.add(new Projectile(true, p.x, p.y, p.bspeed, p.direction, p.gundamage, p.bsize));
         p.lastATK=m;
+        pew.play();
       }
     }
     //Logic for every projectile
@@ -229,6 +241,7 @@ void draw() {
 
             xps.add(new Xp(enemies.get(j).x+random(-enemies.get(j).size, enemies.get(j).size), enemies.get(j).y+random(-enemies.get(j).size, enemies.get(j).size)));
             enemies.remove(j);
+            edead.play();
           }
         }
       }
@@ -238,6 +251,7 @@ void draw() {
           projectiles.remove(i);
           if (p.health<0) {
             playing=false;
+            pdead.play();
           }
         }
       }
@@ -250,6 +264,7 @@ void draw() {
       if (xps.get(i).crash(p.x, p.y, 10) & m-lastXP>10) {
         lastXP=m;
         xps.remove(i);
+        collect.play();
         exp+=1;
       }
     }
@@ -257,13 +272,14 @@ void draw() {
     //health and xp bars
     fill(0);
     rectMode(CENTER);
-
-
     rect(width/2, 59*height/64, 3*width/4, height/32);
     fill(255, 0, 0);
     rectMode(CORNER);
     strokeWeight(0);
     rect(50, 33, ((float(p.health)/float(p.maxhealth))*246), 30);
+    if(p.health < p.maxhealth) {
+      p.health += p.regen;
+    }
     info.display();
     fill(0, 0, 255);
     if (exp<=expr) {
