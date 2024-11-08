@@ -18,14 +18,9 @@ int lastXP;
 int exp = 0;
 int lvl = 1;
 int expr = lvl*20;
-//float r1 = random(4);
-
+float t = random(6);
+char upt;
 int wave=1;
-float r1 = random(4);
-//float r2 = random(4);
-//float r3 = random(4);
-//char up1, up2, up3;
-char up1, up2, up3;
 boolean playing = false;
 
 //Files
@@ -45,19 +40,51 @@ void setup() {
   enemies.add(new Enemy(250, 400, 100));
   enemies.add(new Enemy(250, 400, 100));
   enemies.add(new Enemy(250, 400, 100));
-  //if (r1 < 1) {
-  //  up1 = 'p';
-  //} else if (r1 < 2) {
-  //  up1 = 'd';
-  //} else if (r1 < 3) {
-  //  up1 = 's';
-  //} else if (r1 < 4) {
-  //  up1 = 'f';
-  //}
   // ill do random later, after adding more upgrades
-  u1 = new Upgrade(80, 90, 'r');
-  u2 = new Upgrade(190, 90, 'f');
-  u3 = new Upgrade(300, 90, 's');
+  if (t < 1) {
+    upt = 'd';
+  } else if (t < 2) {
+    upt = 's';
+  } else if (t < 3) {
+    upt = 'r';
+  } else if (t < 4) {
+    upt = 'p';
+  } else if (t < 5) {
+    upt = 'h';
+  } else if (t < 6) {
+    upt = 'f';
+  }
+  u1 = new Upgrade(80, 90, upt);
+  t = random(6);
+  if (t < 1) {
+    upt = 'd';
+  } else if (t < 2) {
+    upt = 's';
+  } else if (t < 3) {
+    upt = 'r';
+  } else if (t < 4) {
+    upt = 'p';
+  } else if (t < 5) {
+    upt = 'h';
+  } else if (t < 6) {
+    upt = 'f';
+  }
+  u2 = new Upgrade(190, 90, upt);
+  t = random(6);
+  if (t < 1) {
+    upt = 'd';
+  } else if (t < 2) {
+    upt = 's';
+  } else if (t < 3) {
+    upt = 'r';
+  } else if (t < 4) {
+    upt = 'p';
+  } else if (t < 5) {
+    upt = 'h';
+  } else if (t < 6) {
+    upt = 'f';
+  }
+  u3 = new Upgrade(300, 90, upt);
   xps.add(new Xp(width/2, height/2));
   info = new Infopanel(0, 100, 1);
   a1=new Asteroid(100, 100, 180);
@@ -100,6 +127,13 @@ void draw() {
       }
     }
     if (exp >= expr) {
+      if (t < 1) {
+        upt = 'd';
+        t = random(2);
+      } else if (t < 2) {
+        upt = 's';
+        t = random(2);
+      }
       u1.display();
       u2.display();
       u3.display();
@@ -287,7 +321,7 @@ void draw() {
     rectMode(CORNER);
     strokeWeight(0);
     rect(50, 33, ((float(p.health)/float(p.maxhealth))*246), 30);
-    if(p.health < p.maxhealth) {
+    if (p.health < p.maxhealth) {
       p.health += p.regen;
     }
     info.display();
