@@ -3,6 +3,8 @@ class Asteroid extends Enemy {
   PImage a1, a2, a3;
   Asteroid(float x, float y, int hp) {
     super(x, y, hp);
+    a1 = loadImage("astroid1RJ.png");
+    a2 = loadImage("asteroid2RJ.png");
     a3 = loadImage("asteroid3RJ.png");
   }
   void display() {
@@ -14,7 +16,9 @@ class Asteroid extends Enemy {
     if (e<1) {
       image(a3, 0, 0, size*1.5, size*1.5);
     } else if (e < 2) {
-      image(e2, 0, 0, size*1.5, size*1.5);
+      image(a2, 0, 0, size*1.5, size*1.5);
+    } else if (e < 1) {
+      image(a1, 0, 0, size*1.5, size*1.5);
     }
 
     popMatrix();
