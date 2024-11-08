@@ -17,7 +17,7 @@ class Player {
     level=1;
     bsize=50;
     bspeed=5;
-    regen = 0;
+    regen = .1;
     ship = loadImage("Spaceship-1.png");
     for (int i=0; i<keys.length-1; i++) {
       keys[i]=false;

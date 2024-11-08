@@ -49,8 +49,10 @@ void setup() {
     upt = 'f';
   }
   u1 = new Upgrade(80, 90, upt);
-  t = random(6);
-  if (t < 1) {
+  t -= random(3);
+  if (t < 0) {
+    t += 6;
+  } else if (t < 1) {
     upt = 'd';
   } else if (t < 2) {
     upt = 's';
@@ -64,8 +66,10 @@ void setup() {
     upt = 'f';
   }
   u2 = new Upgrade(190, 90, upt);
-  t = random(6);
-  if (t < 1) {
+  t -= random(3);
+  if (t < 0) {
+    t += 6;
+  } else if (t < 1) {
     upt = 'd';
   } else if (t < 2) {
     upt = 's';
@@ -162,10 +166,11 @@ void draw() {
           u1.hlvl++;
         }
         if (u1.c == 'r') {
-          p.regen += .2;
+          p.regen += .3;
           u1.rlvl++;
         }
         lvlup.play();
+        t = random(6);
       }
       if (mousePressed == true && u2.hover() == true) {
         exp = exp-expr;
@@ -192,10 +197,11 @@ void draw() {
           u2.hlvl++;
         }
         if (u2.c == 'r') {
-          p.regen += .2;
+          p.regen += .3;
           u2.rlvl++;
         }
         lvlup.play();
+        t = random(6);
       }
       if (mousePressed == true && u3.hover() == true) {
         exp = exp-expr;
@@ -222,10 +228,11 @@ void draw() {
           u3.hlvl++;
         }
         if (u3.c == 'r') {
-          p.regen += .2;
+          p.regen += .3;
           u3.rlvl++;
         }
         lvlup.play();
+        t = random(6);
       }
     }
     //eeeenmie logic
