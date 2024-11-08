@@ -86,7 +86,9 @@ void draw() {
     }
   } else {
     m=millis();
-    background(#200329);
+    background(#000000);
+    e1.stars();
+    e1.nebula(wave);
     p.display();
     p.move();
     a1.move();
@@ -288,7 +290,7 @@ void draw() {
     } else {
       rect(((width/2)-0.5*(0.75*width)+1), (59*height/64)-((height/64)-5), (3*width/4)-4, (height/32)-6);
     }
-    e1.stars();
+    
   }
 }
 //movement
