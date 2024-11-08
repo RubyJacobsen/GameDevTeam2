@@ -34,12 +34,6 @@ void setup() {
   startbutton = loadImage("StartButton.png");
   p = new Player(260, 160);
   e1= new Environment(0);
-  enemies.add(new Enemy(250, 50, 100));
-  enemies.add(new Enemy(250, 400, 100));
-  enemies.add(new Enemy(250, 400, 100));
-  enemies.add(new Enemy(250, 400, 100));
-  enemies.add(new Enemy(250, 400, 100));
-  enemies.add(new Enemy(250, 400, 100));
   // ill do random later, after adding more upgrades
   if (t < 1) {
     upt = 'd';
