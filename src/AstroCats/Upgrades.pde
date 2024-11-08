@@ -74,7 +74,7 @@ class Upgrade {
       textSize(13);
       text("Healh Regen Level " + rlvl, x, y-50);
       textSize(15);
-      text("more", x, y+50);
+      text("+.2 HP/s", x, y+50);
     }
     fill(0, 0, 255);
   }
