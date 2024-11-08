@@ -1,5 +1,5 @@
 // Ruby Jacobsen | AstroCats | 9 Oct 2024
-
+import processing.sound.*;
 //Test classes and one ofs
 Player p;
 Projectile p1;
@@ -25,10 +25,13 @@ float r1 = random(4);
 //float r2 = random(4);
 //float r3 = random(4);
 //char up1, up2, up3;
-
 char up1, up2, up3;
 boolean playing = false;
+
+//Files
 PImage startbutton;
+SoundFile bgm;
+
 
 //Images
 void setup() {
@@ -57,6 +60,8 @@ void setup() {
   xps.add(new Xp(width/2, height/2));
   info = new Infopanel(0, 100, 1);
   a1=new Asteroid(100, 100, 180);
+  bgm=new SoundFile(this, "mixkit-POTENTIALbackground.wav");
+  bgm.play();
 }
 
 void draw() {
