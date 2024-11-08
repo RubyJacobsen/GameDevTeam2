@@ -5,7 +5,7 @@ Player p;
 Projectile p1;
 Infopanel info;
 Asteroid a1;
-
+Environment e1;
 //Arrays
 ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
@@ -38,6 +38,7 @@ void setup() {
   size(500, 500);
   startbutton = loadImage("StartButton.png");
   p = new Player(260, 160);
+  e1= new Environment(0);
   enemies.add(new Enemy(250, 50, 100));
   enemies.add(new Enemy(250, 400, 100));
   enemies.add(new Enemy(250, 400, 100));
@@ -287,6 +288,7 @@ void draw() {
     } else {
       rect(((width/2)-0.5*(0.75*width)+1), (59*height/64)-((height/64)-5), (3*width/4)-4, (height/32)-6);
     }
+    e1.stars();
   }
 }
 //movement
