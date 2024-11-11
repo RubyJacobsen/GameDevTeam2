@@ -330,7 +330,7 @@ char roll(int t) {
     return 'h';
 
   case 5:
-    return 'p';
+    return 'f';
   case 6:
   return 'z';
   default:
