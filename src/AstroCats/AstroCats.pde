@@ -59,6 +59,9 @@ void draw() {
       start.play();
       p = new Player(width/2, height/2);
       wave = 1;
+      for (int i=enemies.size()-1; i>=0; i--) {
+        enemies.remove(i);
+      }
     }
   } else {
     m=millis();
@@ -287,7 +290,6 @@ void draw() {
     } else {
       rect(((width/2)-0.5*(0.75*width)+1), (59*height/64)-((height/64)-5), (3*width/4)-4, (height/32)-6);
     }
-    
   }
 }
 //movement
