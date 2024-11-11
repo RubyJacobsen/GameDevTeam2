@@ -107,68 +107,7 @@ void draw() {
         }
       }
 
-      //  if (mousePressed == true && u2.hover() == true) {
-      //    exp = exp-expr;
-      //    lvl++;
-      //    info.levelUp();
-      //    if (u2.c == 's') {
-      //      p.friction -= 0.005;
-      //    }
-      //    if (u2.c == 'd') {
-      //      p.gundamage += 5;
-      //      u1.dlvl++;
-      //    }
-      //    if (u2.c == 'f') {
-      //      p.atkcd -= 0.02;
-      //      u1.flvl++;
-      //    }
-      //    if (u2.c == 'p') {
-      //      p.bspeed += 1.5;
-      //      u1.plvl++;
-      //    }
-      //    if (u2.c == 'h') {
-      //      p.health += 15;
-      //      p.maxhealth += 15;
-      //      u2.hlvl++;
-      //    }
-      //    if (u2.c == 'r') {
-      //      p.regen += .3;
-      //      u2.rlvl++;
-      //    }
-      //    lvlup.play();
-      //    roll();
-      //  }
-      //  if (mousePressed == true && u3.hover() == true) {
-      //    exp = exp-expr;
-      //    lvl++;
-      //    info.levelUp();
-      //    if (u3.c == 's') {
-      //      p.friction -= 0.005;
-      //    }
-      //    if (u3.c == 'd') {
-      //      p.gundamage += 5;
-      //      u1.dlvl++;
-      //    }
-      //    if (u3.c == 'f') {
-      //      p.atkcd -= 0.02;
-      //      u1.flvl++;
-      //    }
-      //    if (u3.c == 'p') {
-      //      p.bspeed += 1.5;
-      //      u1.plvl++;
-      //    }
-      //    if (u3.c == 'h') {
-      //      p.health += 15;
-      //      p.maxhealth += 15;
-      //      u3.hlvl++;
-      //    }
-      //    if (u3.c == 'r') {
-      //      p.regen += .3;
-      //      u3.rlvl++;
-      //    }
-      //    lvlup.play();
-      //    roll();
-      //  }
+      
     }
     //eeeenmie logic
     for (Enemy e : enemies) {
