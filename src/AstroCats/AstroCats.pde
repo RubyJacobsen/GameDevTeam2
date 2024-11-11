@@ -99,15 +99,13 @@ void draw() {
           exp = exp-expr;
           lvl++;
           info.levelUp();
-          level(upgrades[i].c,i);
+          level(upgrades[i].c, i);
           lvlup.play();
-          for(Upgrade u:upgrades) {
+          for (Upgrade u : upgrades) {
             u.c=roll(int(random(7)));
           }
         }
       }
-
-      
     }
     //eeeenmie logic
     for (Enemy e : enemies) {
@@ -271,34 +269,29 @@ char roll(int t) {
   case 5:
     return 'f';
   case 6:
-  return 'z';
+    return 'z';
   default:
     return ' ';
   }
 }
-void level(char c,int up) {
+void level(char c, int up) {
   if (c == 's') {
     p.friction -= p.friction*0.03;
     upgrades[up].slvl++;
-  }
-  else if (c == 'd') {
+  } else if (c == 'd') {
     p.gundamage += 5;
     upgrades[up].dlvl++;
-  }
-  else if (c == 'f') {
+  } else if (c == 'f') {
     p.atkcd -= p.atkcd*0.04;
     upgrades[up].flvl++;
-  }
-  else if (c == 'p') {
+  } else if (c == 'p') {
     p.bspeed += 1.5;
-upgrades[up].plvl++;
-  }
-  else if (c == 'h') {
+    upgrades[up].plvl++;
+  } else if (c == 'h') {
     p.health += 15;
     p.maxhealth += 15;
     upgrades[up].hlvl++;
-  }
-  else if (c == 'r') {
+  } else if (c == 'r') {
     p.regen += .3;
     upgrades[up].rlvl++;
   }

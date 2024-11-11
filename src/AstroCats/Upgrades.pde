@@ -70,7 +70,7 @@ class Upgrade {
       break;
     case 'p':
       image(p, x, y, 85, 85);
-      textSize(13);
+      textSize(12);
       text("Shot Velocity Level " + plvl, x, y-50);
       textSize(17);
       text("+30%", x, y+50);
