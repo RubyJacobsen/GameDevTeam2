@@ -8,7 +8,6 @@ class Projectile {
     this.x=x;
     this.y=y;
     this.speed=speed;
-
     this.direction=direction;
     this.damage=damage;
     this.size=size;

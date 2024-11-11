@@ -1,8 +1,8 @@
 class Upgrade {
   // Member Variables
-  int x, y, dlvl, hlvl, slvl, flvl, plvl, rlvl;
+  int x, y, dlvl, hlvl, slvl, flvl, plvl, rlvl, zlvl;
   char c;
-  PImage d, h, s, f, p, r;
+  PImage d, h, s, f, p, r, z;
   color col;
   float t = random(4);
   float a = random(2);
@@ -18,6 +18,7 @@ class Upgrade {
     f = loadImage("yarnball.png");
     p = loadImage("FirecatbowlEH.png");
     r = loadImage("tunainspace.png");
+    z = loadImage("brownmouseRJ.png");
     col = #ffffff;
     dlvl = 1;
     hlvl = 1;
@@ -25,6 +26,7 @@ class Upgrade {
     flvl = 1;
     plvl = 1;
     rlvl = 1;
+    zlvl = 1;
   }
 
   // Memeber Methods
@@ -74,7 +76,14 @@ class Upgrade {
       textSize(13);
       text("Healh Regen Level " + rlvl, x, y-50);
       textSize(15);
-      text("+.2 HP/s", x, y+50);
+      text("+.1 HP/s", x, y+50);
+    }
+    if (c == 'z') {
+      image(z, x, y, 70, 70);
+      textSize(13);
+      text("Shot Size Level " + zlvl, x, y-50);
+      textSize(15);
+      text("+5%", x, y+50);
     }
     fill(0, 0, 255);
   }

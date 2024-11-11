@@ -83,13 +83,6 @@ void draw() {
       }
     }
     if (exp >= expr) {
-      if (t < 1) {
-        upt = 'd';
-        t = random(2);
-      } else if (t < 2) {
-        upt = 's';
-        t = random(2);
-      }
       u1.display();
       u2.display();
       u3.display();
@@ -122,7 +115,7 @@ void draw() {
           u1.hlvl++;
         }
         if (u1.c == 'r') {
-          p.regen += .3;
+          p.regen += .005;
           u1.rlvl++;
         }
         lvlup.play();
@@ -153,7 +146,7 @@ void draw() {
           u2.hlvl++;
         }
         if (u2.c == 'r') {
-          p.regen += .3;
+          p.regen += .005;
           u2.rlvl++;
         }
         lvlup.play();
@@ -184,7 +177,7 @@ void draw() {
           u3.hlvl++;
         }
         if (u3.c == 'r') {
-          p.regen += .3;
+          p.regen += .005;
           u3.rlvl++;
         }
         lvlup.play();
@@ -241,7 +234,6 @@ void draw() {
             xps.add(new Xp(enemies.get(j).x+random(-enemies.get(j).size, enemies.get(j).size), enemies.get(j).y+random(-enemies.get(j).size, enemies.get(j).size)));
             xps.add(new Xp(enemies.get(j).x+random(-enemies.get(j).size, enemies.get(j).size), enemies.get(j).y+random(-enemies.get(j).size, enemies.get(j).size)));
             xps.add(new Xp(enemies.get(j).x+random(-enemies.get(j).size, enemies.get(j).size), enemies.get(j).y+random(-enemies.get(j).size, enemies.get(j).size)));
-
             xps.add(new Xp(enemies.get(j).x+random(-enemies.get(j).size, enemies.get(j).size), enemies.get(j).y+random(-enemies.get(j).size, enemies.get(j).size)));
             enemies.remove(j);
             edead.play();
@@ -279,7 +271,7 @@ void draw() {
     fill(255, 0, 0);
     rectMode(CORNER);
     strokeWeight(0);
-    rect(50, 33, ((float(p.health)/float(p.maxhealth))*246), 30);
+    rect(50, 33, ((p.health/p.maxhealth)*246), 30);
     if (p.health < p.maxhealth) {
       p.health += p.regen;
     }
@@ -334,6 +326,7 @@ void keyReleased() {
 }
 
 void roll() {
+  random(6);
   if (t < 1) {
     upt = 'd';
   } else if (t < 2) {
