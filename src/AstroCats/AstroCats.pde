@@ -35,54 +35,7 @@ void setup() {
   p = new Player(260, 160);
   e1= new Environment(0);
   // ill do random later, after adding more upgrades
-  if (t < 1) {
-    upt = 'd';
-  } else if (t < 2) {
-    upt = 's';
-  } else if (t < 3) {
-    upt = 'r';
-  } else if (t < 4) {
-    upt = 'p';
-  } else if (t < 5) {
-    upt = 'h';
-  } else if (t < 6) {
-    upt = 'f';
-  }
-  u1 = new Upgrade(80, 90, upt);
-  t -= random(3);
-  if (t < 0) {
-    t += 6;
-  } else if (t < 1) {
-    upt = 'd';
-  } else if (t < 2) {
-    upt = 's';
-  } else if (t < 3) {
-    upt = 'r';
-  } else if (t < 4) {
-    upt = 'p';
-  } else if (t < 5) {
-    upt = 'h';
-  } else if (t < 6) {
-    upt = 'f';
-  }
-  u2 = new Upgrade(190, 90, upt);
-  t -= random(3);
-  if (t < 0) {
-    t += 6;
-  } else if (t < 1) {
-    upt = 'd';
-  } else if (t < 2) {
-    upt = 's';
-  } else if (t < 3) {
-    upt = 'r';
-  } else if (t < 4) {
-    upt = 'p';
-  } else if (t < 5) {
-    upt = 'h';
-  } else if (t < 6) {
-    upt = 'f';
-  }
-  u3 = new Upgrade(300, 90, upt);
+  roll();
   xps.add(new Xp(width/2, height/2));
   info = new Infopanel(0, 100, 1);
   a1=new Asteroid(100, 100, 180);
@@ -170,7 +123,7 @@ void draw() {
           u1.rlvl++;
         }
         lvlup.play();
-        t = random(6);
+        roll();
       }
       if (mousePressed == true && u2.hover() == true) {
         exp = exp-expr;
@@ -201,7 +154,7 @@ void draw() {
           u2.rlvl++;
         }
         lvlup.play();
-        t = random(6);
+        roll();
       }
       if (mousePressed == true && u3.hover() == true) {
         exp = exp-expr;
@@ -232,7 +185,7 @@ void draw() {
           u3.rlvl++;
         }
         lvlup.play();
-        t = random(6);
+        roll();
       }
     }
     //eeeenmie logic
@@ -376,4 +329,55 @@ void keyReleased() {
     //ax=1;
     p.keys[3]=false;
   }
+}
+
+void roll() {
+  if (t < 1) {
+    upt = 'd';
+  } else if (t < 2) {
+    upt = 's';
+  } else if (t < 3) {
+    upt = 'r';
+  } else if (t < 4) {
+    upt = 'p';
+  } else if (t < 5) {
+    upt = 'h';
+  } else if (t < 6) {
+    upt = 'f';
+  }
+  u1 = new Upgrade(80, 90, upt);
+  t -= random(3);
+  if (t < 0) {
+    t += 6;
+  } else if (t < 1) {
+    upt = 'd';
+  } else if (t < 2) {
+    upt = 's';
+  } else if (t < 3) {
+    upt = 'r';
+  } else if (t < 4) {
+    upt = 'p';
+  } else if (t < 5) {
+    upt = 'h';
+  } else if (t < 6) {
+    upt = 'f';
+  }
+  u2 = new Upgrade(190, 90, upt);
+  t -= random(3);
+  if (t < 0) {
+    t += 6;
+  } else if (t < 1) {
+    upt = 'd';
+  } else if (t < 2) {
+    upt = 's';
+  } else if (t < 3) {
+    upt = 'r';
+  } else if (t < 4) {
+    upt = 'p';
+  } else if (t < 5) {
+    upt = 'h';
+  } else if (t < 6) {
+    upt = 'f';
+  }
+  u3 = new Upgrade(300, 90, upt);
 }
