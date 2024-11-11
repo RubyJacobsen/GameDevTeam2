@@ -6,10 +6,12 @@ Projectile p1;
 Infopanel info;
 Asteroid a1;
 Environment e1;
+
 //Arrays
 ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
-Upgrade u1, u2, u3;
+Upgrade[] upgrades = new Upgrade[3];
+//u1, u2, u3;
 ArrayList<Xp> xps = new ArrayList<Xp>();
 
 //Some variables
@@ -18,10 +20,13 @@ int lastXP;
 int exp = 0;
 int lvl = 1;
 int expr = lvl*20;
-float t = random(6);
+float t = random(7);
 char upt;
 int wave=1;
 boolean playing = false;
+
+//Indexes
+
 
 //Files
 PImage startbutton;
@@ -35,7 +40,10 @@ void setup() {
   p = new Player(260, 160);
   e1= new Environment(0);
   // ill do random later, after adding more upgrades
-  roll();
+  for (int i=0; i<upgrades.length; i++) {
+    //upt=int(random(6));
+    upgrades[i]=new Upgrade(110*(i+1), 150, roll(int(random(6))));
+  }
   xps.add(new Xp(width/2, height/2));
   info = new Infopanel(0, 100, 1);
   a1=new Asteroid(100, 100, 180);
@@ -83,106 +91,84 @@ void draw() {
       }
     }
     if (exp >= expr) {
-      u1.display();
-      u2.display();
-      u3.display();
-      u1.hover();
-      u2.hover();
-      u3.hover();
-      if (mousePressed == true && u1.hover() == true) {
-        exp = exp-expr;
-        lvl++;
-        info.levelUp();
-        if (u1.c == 's') {
-          p.friction -= p.friction*0.03;
-          u1.slvl++;
+      for (int i=0; i<upgrades.length; i++) {
+
+        upgrades[i].display();
+        upgrades[i].hover();
+        if (mousePressed == true && upgrades[i].hover() == true) {
+          exp = exp-expr;
+          lvl++;
+          info.levelUp();
+          level(upgrades[i].c,i);
+          lvlup.play();
+          for(Upgrade u:upgrades) {
+            u.c=roll(int(random(7)));
+          }
         }
-        if (u1.c == 'd') {
-          p.gundamage += 5;
-          u1.dlvl++;
-        }
-        if (u1.c == 'f') {
-          p.atkcd -= p.atkcd*0.04;
-          u1.flvl++;
-        }
-        if (u1.c == 'p') {
-          p.bspeed += 1.5;
-          u1.plvl++;
-        }
-        if (u1.c == 'h') {
-          p.health += 15;
-          p.maxhealth += 15;
-          u1.hlvl++;
-        }
-        if (u1.c == 'r') {
-          p.regen += .005;
-          u1.rlvl++;
-        }
-        lvlup.play();
-        roll();
       }
-      if (mousePressed == true && u2.hover() == true) {
-        exp = exp-expr;
-        lvl++;
-        info.levelUp();
-        if (u2.c == 's') {
-          p.friction -= 0.005;
-        }
-        if (u2.c == 'd') {
-          p.gundamage += 5;
-          u1.dlvl++;
-        }
-        if (u2.c == 'f') {
-          p.atkcd -= 0.02;
-          u1.flvl++;
-        }
-        if (u2.c == 'p') {
-          p.bspeed += 1.5;
-          u1.plvl++;
-        }
-        if (u2.c == 'h') {
-          p.health += 15;
-          p.maxhealth += 15;
-          u2.hlvl++;
-        }
-        if (u2.c == 'r') {
-          p.regen += .005;
-          u2.rlvl++;
-        }
-        lvlup.play();
-        roll();
-      }
-      if (mousePressed == true && u3.hover() == true) {
-        exp = exp-expr;
-        lvl++;
-        info.levelUp();
-        if (u3.c == 's') {
-          p.friction -= 0.005;
-        }
-        if (u3.c == 'd') {
-          p.gundamage += 5;
-          u1.dlvl++;
-        }
-        if (u3.c == 'f') {
-          p.atkcd -= 0.02;
-          u1.flvl++;
-        }
-        if (u3.c == 'p') {
-          p.bspeed += 1.5;
-          u1.plvl++;
-        }
-        if (u3.c == 'h') {
-          p.health += 15;
-          p.maxhealth += 15;
-          u3.hlvl++;
-        }
-        if (u3.c == 'r') {
-          p.regen += .005;
-          u3.rlvl++;
-        }
-        lvlup.play();
-        roll();
-      }
+
+      //  if (mousePressed == true && u2.hover() == true) {
+      //    exp = exp-expr;
+      //    lvl++;
+      //    info.levelUp();
+      //    if (u2.c == 's') {
+      //      p.friction -= 0.005;
+      //    }
+      //    if (u2.c == 'd') {
+      //      p.gundamage += 5;
+      //      u1.dlvl++;
+      //    }
+      //    if (u2.c == 'f') {
+      //      p.atkcd -= 0.02;
+      //      u1.flvl++;
+      //    }
+      //    if (u2.c == 'p') {
+      //      p.bspeed += 1.5;
+      //      u1.plvl++;
+      //    }
+      //    if (u2.c == 'h') {
+      //      p.health += 15;
+      //      p.maxhealth += 15;
+      //      u2.hlvl++;
+      //    }
+      //    if (u2.c == 'r') {
+      //      p.regen += .3;
+      //      u2.rlvl++;
+      //    }
+      //    lvlup.play();
+      //    roll();
+      //  }
+      //  if (mousePressed == true && u3.hover() == true) {
+      //    exp = exp-expr;
+      //    lvl++;
+      //    info.levelUp();
+      //    if (u3.c == 's') {
+      //      p.friction -= 0.005;
+      //    }
+      //    if (u3.c == 'd') {
+      //      p.gundamage += 5;
+      //      u1.dlvl++;
+      //    }
+      //    if (u3.c == 'f') {
+      //      p.atkcd -= 0.02;
+      //      u1.flvl++;
+      //    }
+      //    if (u3.c == 'p') {
+      //      p.bspeed += 1.5;
+      //      u1.plvl++;
+      //    }
+      //    if (u3.c == 'h') {
+      //      p.health += 15;
+      //      p.maxhealth += 15;
+      //      u3.hlvl++;
+      //    }
+      //    if (u3.c == 'r') {
+      //      p.regen += .3;
+      //      u3.rlvl++;
+      //    }
+      //    lvlup.play();
+      //    roll();
+      //  }
     }
     //eeeenmie logic
     for (Enemy e : enemies) {
@@ -234,6 +220,7 @@ void draw() {
             xps.add(new Xp(enemies.get(j).x+random(-enemies.get(j).size, enemies.get(j).size), enemies.get(j).y+random(-enemies.get(j).size, enemies.get(j).size)));
             xps.add(new Xp(enemies.get(j).x+random(-enemies.get(j).size, enemies.get(j).size), enemies.get(j).y+random(-enemies.get(j).size, enemies.get(j).size)));
             xps.add(new Xp(enemies.get(j).x+random(-enemies.get(j).size, enemies.get(j).size), enemies.get(j).y+random(-enemies.get(j).size, enemies.get(j).size)));
+
             xps.add(new Xp(enemies.get(j).x+random(-enemies.get(j).size, enemies.get(j).size), enemies.get(j).y+random(-enemies.get(j).size, enemies.get(j).size)));
             enemies.remove(j);
             edead.play();
@@ -325,54 +312,55 @@ void keyReleased() {
   }
 }
 
-void roll() {
-  random(6);
-  if (t < 1) {
-    upt = 'd';
-  } else if (t < 2) {
-    upt = 's';
-  } else if (t < 3) {
-    upt = 'r';
-  } else if (t < 4) {
-    upt = 'p';
-  } else if (t < 5) {
-    upt = 'h';
-  } else if (t < 6) {
-    upt = 'f';
+char roll(int t) {
+  switch (t) {
+  case 0:
+    return 'd';
+
+  case 1:
+    return 's';
+
+  case 2:
+    return 'r';
+
+  case 3:
+    return 'p';
+
+  case 4:
+    return 'h';
+
+  case 5:
+    return 'p';
+  case 6:
+  return 'z';
+  default:
+    return ' ';
   }
-  u1 = new Upgrade(80, 90, upt);
-  t -= random(3);
-  if (t < 0) {
-    t += 6;
-  } else if (t < 1) {
-    upt = 'd';
-  } else if (t < 2) {
-    upt = 's';
-  } else if (t < 3) {
-    upt = 'r';
-  } else if (t < 4) {
-    upt = 'p';
-  } else if (t < 5) {
-    upt = 'h';
-  } else if (t < 6) {
-    upt = 'f';
+}
+void level(char c,int up) {
+  if (c == 's') {
+    p.friction -= p.friction*0.03;
+    upgrades[up].slvl++;
   }
-  u2 = new Upgrade(190, 90, upt);
-  t -= random(3);
-  if (t < 0) {
-    t += 6;
-  } else if (t < 1) {
-    upt = 'd';
-  } else if (t < 2) {
-    upt = 's';
-  } else if (t < 3) {
-    upt = 'r';
-  } else if (t < 4) {
-    upt = 'p';
-  } else if (t < 5) {
-    upt = 'h';
-  } else if (t < 6) {
-    upt = 'f';
+  else if (c == 'd') {
+    p.gundamage += 5;
+    upgrades[up].dlvl++;
   }
-  u3 = new Upgrade(300, 90, upt);
+  else if (c == 'f') {
+    p.atkcd -= p.atkcd*0.04;
+    upgrades[up].flvl++;
+  }
+  else if (c == 'p') {
+    p.bspeed += 1.5;
+upgrades[up].plvl++;
+  }
+  else if (c == 'h') {
+    p.health += 15;
+    p.maxhealth += 15;
+    upgrades[up].hlvl++;
+  }
+  else if (c == 'r') {
+    p.regen += .3;
+    upgrades[up].rlvl++;
+  }
 }

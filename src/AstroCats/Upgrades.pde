@@ -6,6 +6,7 @@ class Upgrade {
   color col;
   float t = random(4);
   float a = random(2);
+  //int[] lvls=new int[7];
 
   // Constructor
   Upgrade(int x, int y, char c) {
@@ -37,53 +38,59 @@ class Upgrade {
     rect(x, y, 100, 150);
     fill(0);
     textAlign(CENTER, CENTER);
-    if (c == 'd') {
+    switch (c) {
+    case 'd':
       image(d, x, y, 170, 170);
       textSize(13);
       text("Damage Level " + dlvl, x, y-50);
       textSize(15);
       text("+7 Damage", x, y+50);
-    }
-    if (c == 'h') {
+      break;
+
+
+    case 'h':
       image(h, x-7, y-5, 90, 90);
       textSize(14);
       text("Health Level " + hlvl, x, y-50);
       textSize(15);
       text("+5 HP", x, y+50);
-    }
-    if (c == 's') {
+      break;
+    case 's':
       image(s, x, y, 190, 190);
       text("Speed Level " + slvl, x, y-50);
       textSize(17);
       text("+3%", x, y+50);
-    }
-    if (c == 'f') {
+      break;
+    case 'f':
       image(f, x, y, 150, 150);
       textSize(13);
       text("Fire Rate Level " + flvl, x, y-50);
       textSize(17);
       text("+4%", x, y+50);
-    }
-    if (c == 'p') {
+      break;
+    case 'p':
       image(p, x, y, 85, 85);
       textSize(13);
       text("Shot Velocity Level " + plvl, x, y-50);
       textSize(17);
       text("+30%", x, y+50);
-    }
-    if (c == 'r') {
+      break;
+    case 'r':
       image(r, x, y, 70, 70);
       textSize(13);
       text("Healh Regen Level " + rlvl, x, y-50);
       textSize(15);
       text("+.1 HP/s", x, y+50);
-    }
-    if (c == 'z') {
+      break;
+    case 'z':
       image(z, x, y, 70, 70);
       textSize(13);
       text("Shot Size Level " + zlvl, x, y-50);
       textSize(15);
       text("+5%", x, y+50);
+      break;
+    default:
+      break;
     }
     fill(0, 0, 255);
   }
