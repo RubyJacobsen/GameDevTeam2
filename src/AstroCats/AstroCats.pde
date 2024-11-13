@@ -76,6 +76,7 @@ void draw() {
     background(#000000);
     e1.stars();
     e1.nebula(wave);
+    e1.blackHole(wave);
     p.display();
     p.move();
     a1.move();
