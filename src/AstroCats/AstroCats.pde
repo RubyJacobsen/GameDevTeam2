@@ -295,10 +295,10 @@ void draw() {
       p.gundamage += 7;
       upgrades[up].dlvl++;
     } else if (c == 'f') {
-      p.atkcd -= p.atkcd*0.04;
+      p.atkcd -= p.atkcd*0.035;
       upgrades[up].flvl++;
     } else if (c == 'p') {
-      p.bspeed += 1.5;
+      p.bspeed += 1.4;
       upgrades[up].plvl++;
     } else if (c == 'h') {
       p.health += 15;
