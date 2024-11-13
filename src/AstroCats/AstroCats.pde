@@ -88,12 +88,11 @@ void draw() {
       float tempy=random(height-10);
       int tempe=int(random(2, 4));
       for (int i=0; i<tempe*wave; i++) {
-        enemies.add(new Enemy(tempx, tempy, wave+100));
+        enemies.add(new Enemy(tempx, tempy, 100+(wave-1)*20));
       }
     }
     if (exp >= expr) {
       for (int i=0; i<upgrades.length; i++) {
-
         upgrades[i].display();
         upgrades[i].hover();
         if (mousePressed == true && upgrades[i].hover() == true) {
@@ -158,7 +157,6 @@ void draw() {
             xps.add(new Xp(enemies.get(j).x+random(-enemies.get(j).size, enemies.get(j).size), enemies.get(j).y+random(-enemies.get(j).size, enemies.get(j).size)));
             xps.add(new Xp(enemies.get(j).x+random(-enemies.get(j).size, enemies.get(j).size), enemies.get(j).y+random(-enemies.get(j).size, enemies.get(j).size)));
             xps.add(new Xp(enemies.get(j).x+random(-enemies.get(j).size, enemies.get(j).size), enemies.get(j).y+random(-enemies.get(j).size, enemies.get(j).size)));
-
             xps.add(new Xp(enemies.get(j).x+random(-enemies.get(j).size, enemies.get(j).size), enemies.get(j).y+random(-enemies.get(j).size, enemies.get(j).size)));
             enemies.remove(j);
             edead.play();

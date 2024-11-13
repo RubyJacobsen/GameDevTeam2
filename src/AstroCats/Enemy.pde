@@ -28,8 +28,10 @@ class Enemy {
     fill(255, 0, 0);
     if (e<1) {
       image(e1, 0, 0, size*1.5, size*1.5);
+      d *= 1.2;
     } else if (e < 2) {
       image(e2, 0, 0, size*1.5, size*1.5);
+      hp *= 1.4;
     }
 
     popMatrix();
