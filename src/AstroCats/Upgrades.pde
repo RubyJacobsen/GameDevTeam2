@@ -57,6 +57,7 @@ class Upgrade {
       break;
     case 's':
       image(s, x, y, 190, 190);
+      textSize(14);
       text("Speed Level " + slvl, x, y-50);
       textSize(17);
       text("+3%", x, y+50);
@@ -70,7 +71,7 @@ class Upgrade {
       break;
     case 'p':
       image(p, x, y, 85, 85);
-      textSize(12);
+      textSize(11);
       text("Shot Velocity Level " + plvl, x, y-50);
       textSize(17);
       text("+30%", x, y+50);
@@ -80,14 +81,14 @@ class Upgrade {
       textSize(11);
       text("Healh Regen Level " + rlvl, x, y-50);
       textSize(15);
-      text("+.1 HP/s", x, y+50);
+      text("+.6 HP/s", x, y+50);
       break;
     case 'z':
       image(z, x, y, 70, 70);
       textSize(13);
       text("Shot Size Level " + zlvl, x, y-50);
       textSize(15);
-      text("+5%", x, y+50);
+      text("+4%", x, y+50);
       break;
     default:
       break;

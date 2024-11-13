@@ -11,7 +11,7 @@ class Player {
     friction=0.12; //to be multiplied by current velocity and subtracted by acceleration
     atkcd=0.5;//measured in seconds
     guncount=1;
-    gundamage=10;
+    gundamage=12;
     health=100;
     maxhealth=health;
     level=1;

@@ -34,6 +34,7 @@ class Enemy {
     d=10;
     e1 = loadImage("TheEliteGH.png");
     atkCD=1000;
+    break;
   }
     
   }
@@ -50,7 +51,7 @@ class Enemy {
     } else if (e < 2) {
       image(e2, 0, 0, size*1.5, size*1.5);
       //hp *= 1.4;
-    }
+    } 
 
     popMatrix();
     if (hp<mhp) {
