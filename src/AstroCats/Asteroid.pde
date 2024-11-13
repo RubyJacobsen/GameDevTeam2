@@ -12,7 +12,6 @@ class Asteroid extends Enemy {
     pushMatrix();
     translate(x, y);
     rotate(radians(m/50));
-    fill(255, 0, 0);
     if (e<1) {
       image(a3, 0, 0, size*1.5, size*1.5);
     } else if (e < 2) {

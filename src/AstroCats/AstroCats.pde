@@ -7,6 +7,7 @@ Infopanel info;
 Asteroid a1;
 Environment e1;
 
+
 //Arrays
 ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 ArrayList<Enemy> enemies = new ArrayList<Enemy>();
