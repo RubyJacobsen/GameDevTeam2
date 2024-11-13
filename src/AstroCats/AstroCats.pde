@@ -47,7 +47,7 @@ void setup() {
   }
   xps.add(new Xp(width/2, height/2));
   info = new Infopanel(0, 100, 1);
-  a1=new Asteroid(100, 100, 180);
+  a1=new Asteroid(100, 100, 180, ' ');
   bgm=new SoundFile(this, "mixkit-POTENTIALbackground.wav");
   bgm.loop();
   edead = new SoundFile(this, "mixkit-smallexplosionEH-2759.wav");
@@ -88,8 +88,16 @@ void draw() {
       float tempx=random(width-10);
       float tempy=random(height-10);
       int tempe=int(random(2, 4));
-      for (int i=0; i<tempe*wave; i++) {
-        enemies.add(new Enemy(tempx, tempy, 100+(wave-1)*20));
+      if (wave==20) {
+         
+         enemies.add(new Enemy(0,4*height/10,1000,'e'));
+         enemies.add(new Enemy(7*width/10,1*height/10,1000,'e'));
+         enemies.add(new Enemy(5*width/10,7*height/10,1000,'e'));
+ 
+      } else {
+        for (int i=0; i<tempe*wave; i++) {
+          enemies.add(new Enemy(tempx, tempy, 100+(wave-1)*20, 'b'));
+        }
       }
     }
     if (exp >= expr) {
@@ -114,7 +122,7 @@ void draw() {
       e.move();
 
       if (e.fire(m)) {
-        projectiles.add(new Projectile(false, e.x, e.y, 4, e.direction+random(-PI/8, PI/8), 5, 30));
+        projectiles.add(new Projectile(false, e.x, e.y, 4, e.direction+random(-PI/8, PI/8), e.d, 30));
       }
     }
     //Attack Cooldown, fire bullet
@@ -167,6 +175,7 @@ void draw() {
       if ( i<projectiles.size()) {
         if (projectiles.get(i).crash(p.x, p.y, 50) & !projectiles.get(i).f ) {
           p.health-=projectiles.get(i).damage;
+
           projectiles.remove(i);
           if (p.health<0) {
             playing=false;

@@ -3,22 +3,39 @@ class Enemy {
   int hp, d, mhp;
   int size=45;
   PImage e1, e2;
-  float e = random(0, 2);
-  int atkCD=5000;//in milliseconds
+  int e = 0;
+  int atkCD;//in milliseconds
   int lastATK;
   float direction;
+  char t;
 
-  Enemy(float ex, float ey, int h) {
-    x = ex;
+  Enemy(float ex, float ey, int h, char t) {
+    this.t=t;
+     x = ex;
     y = ey;
-    hp=h;
+     hp=h;
+     
     mhp=h;
+    switch (t) {
+   case 'b':
+   
     e1 = loadImage("Alien1GH.png");
     e2 = loadImage("Alien2GH.png");
-    e = random(0, 2);
+    e = int(random(0, 2));
     vx = random(-5, 5);
     vy = random(-5, 5);
     lastATK=int(random(0,atkCD))+millis();
+    atkCD=5000;
+    d=5;
+    break;
+    case 'e':
+    vx = random(-5, 5);
+    vy = random(-5, 5);
+    d=10;
+    e1 = loadImage("TheEliteGH.png");
+    atkCD=1000;
+  }
+    
   }
   void display(float px, float py) {
     pushMatrix();
@@ -28,10 +45,11 @@ class Enemy {
     fill(255, 0, 0);
     if (e<1) {
       image(e1, 0, 0, size*1.5, size*1.5);
-      d *= 1.2;
+      //d *= 1.2;
+      println(d);
     } else if (e < 2) {
       image(e2, 0, 0, size*1.5, size*1.5);
-      hp *= 1.4;
+      //hp *= 1.4;
     }
 
     popMatrix();

@@ -1,8 +1,8 @@
 class Asteroid extends Enemy {
   int m;
   PImage a1, a2, a3;
-  Asteroid(float x, float y, int hp) {
-    super(x, y, hp);
+  Asteroid(float x, float y, int hp,char t) {
+    super(x, y, hp,t);
     a1 = loadImage("astroid1RJ.png");
     a2 = loadImage("asteroid2RJ.png");
     a3 = loadImage("asteroid3RJ.png");
