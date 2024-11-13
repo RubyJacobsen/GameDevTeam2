@@ -293,7 +293,10 @@ void level(char c, int up) {
     p.maxhealth += 15;
     upgrades[up].hlvl++;
   } else if (c == 'r') {
-    p.regen += .3;
+    p.regen += .05;
     upgrades[up].rlvl++;
+  } else if (c == 'z') {
+    p.bsize += 1;
+    upgrades[up].zlvl++;
   }
 }

@@ -77,7 +77,7 @@ class Upgrade {
       break;
     case 'r':
       image(r, x, y, 70, 70);
-      textSize(13);
+      textSize(11);
       text("Healh Regen Level " + rlvl, x, y-50);
       textSize(15);
       text("+.1 HP/s", x, y+50);
