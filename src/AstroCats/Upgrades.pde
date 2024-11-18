@@ -46,8 +46,6 @@ class Upgrade {
       textSize(15);
       text("+7 Damage", x, y+50);
       break;
-
-
     case 'h':
       image(h, x-7, y-5, 90, 90);
       textSize(14);
