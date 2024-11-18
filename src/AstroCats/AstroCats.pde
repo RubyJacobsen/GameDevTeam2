@@ -36,7 +36,7 @@ SoundFile bgm, edead, lvlup, pdead, pew, collect, start;
 
 //Images
 void setup() {
-  size(500, 500);
+  fullScreen();
   startbutton = loadImage("StartButton.png");
   p = new Player(260, 160);
   e1= new Environment(0);
@@ -125,7 +125,7 @@ void draw() {
         e.move();
 
         if (e.fire(m)) {
-          projectiles.add(new Projectile(false, e.x, e.y, 4, e.direction+random(-PI/8, PI/8), e.d, 30));
+          projectiles.add(new Projectile(false, e.x, e.y, 8, e.direction+random(-PI/8, PI/8), e.d, 45));
         }
       }
       //Attack Cooldown, fire bullet

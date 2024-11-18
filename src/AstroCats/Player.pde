@@ -16,7 +16,7 @@ class Player {
     maxhealth=health;
     level=1;
     bsize=50;
-    bspeed=5;
+    bspeed=10;
     regen = .02;
     ship = loadImage("Spaceship-1.png");
     for (int i=0; i<keys.length-1; i++) {
