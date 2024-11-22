@@ -24,8 +24,9 @@ class Enemy {
     e = int(random(0, 2));
     vx = random(-5, 5);
     vy = random(-5, 5);
-    lastATK=int(random(0,atkCD))+millis();
     atkCD=5000;
+    lastATK=int(random(0,atkCD))+millis();
+    
     d=5;
     break;
     case 'e':
