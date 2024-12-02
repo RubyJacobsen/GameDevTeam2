@@ -26,7 +26,6 @@ char upt;
 int wave=1;
 boolean playing = false;
 
-//Indexes
 
 
 //Files
@@ -212,7 +211,7 @@ void draw() {
       fill(255, 0, 0);
       rectMode(CORNER);
       strokeWeight(0);
-      rect(50, 33, ((p.health/p.maxhealth)*246), 30);
+      rect(70, 50, ((p.health/p.maxhealth)*346), 45);
       if (p.health < p.maxhealth) {
         p.health += p.regen;
       }

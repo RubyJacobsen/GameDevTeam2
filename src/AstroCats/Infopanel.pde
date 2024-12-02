@@ -46,13 +46,13 @@ class Infopanel {
     textMode(CORNER);
     textAlign(LEFT);
     // Display the score
-    text("Score: " + score, 20, 30);
+    //text("Score: " + score, 20, 30);
 
-    // Display the health
-    text("Health: " + health, 20, 50);
-    text("Level: " + level, 20, 70);
+    //// Display the health
+    //text("Health: " + health, 20, 50);
+    //text("Level: " + level, 20, 70);
     imageMode(CORNER);
-    image(healthbar,-40,-150,560,400);
+    image(healthbar,-60,-225,800,600);
     // Display the level
     
   }
