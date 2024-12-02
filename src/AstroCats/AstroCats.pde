@@ -75,7 +75,28 @@ void draw() {
         enemies.remove(i);
       }
     }
-  } else {
+  }  else if (exp >= expr) {
+          println("tew");
+        for (int i=0; i<upgrades.length; i++) {
+          println("tes");
+          upgrades[i].display();
+          upgrades[i].hover();
+          if (mousePressed == true && upgrades[i].hover() == true) {
+            exp = exp-expr;
+            lvl++;
+            expr += 10;
+            info.levelUp();
+            level(upgrades[i].c, i);
+            lvlup.play();
+            for (Upgrade u : upgrades) {
+              u.c=roll(int(random(7)));
+            }
+          }
+        }
+        
+      }
+  
+  else {
     m=millis();
     background(#000000);
     e1.stars();
@@ -202,28 +223,7 @@ void draw() {
       } else {
         rect(((width/2)-0.5*(0.75*width)+1), (59*height/64)-((height/64)-5), (3*width/4)-4, (height/32)-6);
       }
-      while (exp >= expr) {
-        //p.move();
-        //  p.display();
-          println("tew");
-        //  background(255);
-        for (int i=0; i<upgrades.length; i++) {
-          println("tes");
-          upgrades[i].display();
-          upgrades[i].hover();
-          if (mousePressed == true && upgrades[i].hover() == true) {
-            exp = exp-expr;
-            lvl++;
-            expr += 10;
-            info.levelUp();
-            level(upgrades[i].c, i);
-            lvlup.play();
-            for (Upgrade u : upgrades) {
-              u.c=roll(int(random(7)));
-            }
-          }
-        }
-      }
+     
     
   }
 }
