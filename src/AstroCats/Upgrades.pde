@@ -51,7 +51,7 @@ class Upgrade {
       textSize(23);
       text("Health Level " + hlvl, x, y-100);
       textSize(27);
-      text("+5 HP", x, y+100);
+      text("+15 Max HP", x, y+100);
       break;
     case 's':
       image(s, x, y, 380, 380);

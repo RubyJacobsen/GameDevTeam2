@@ -297,13 +297,13 @@ void draw() {
       p.friction -= p.friction*0.03;
       upgrades[up].slvl++;
     } else if (c == 'd') {
-      p.gundamage += 7;
+      p.gundamage += 10;
       upgrades[up].dlvl++;
     } else if (c == 'f') {
-      p.atkcd -= p.atkcd*0.035;
+      p.atkcd -= p.atkcd*0.04;
       upgrades[up].flvl++;
     } else if (c == 'p') {
-      p.bspeed += 1.4;
+      p.bspeed += 1.5;
       upgrades[up].plvl++;
     } else if (c == 'h') {
       p.health += 15;
