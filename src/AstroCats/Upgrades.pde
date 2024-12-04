@@ -35,58 +35,58 @@ class Upgrade {
     imageMode(CENTER);
     rectMode(CENTER);
     fill(col);
-    rect(x, y, 100, 150);
+    rect(x, y, 200, 300);
     fill(0);
     textAlign(CENTER, CENTER);
     switch (c) {
     case 'd':
-      image(d, x, y, 170, 170);
-      textSize(13);
-      text("Damage Level " + dlvl, x, y-50);
-      textSize(15);
-      text("+7 Damage", x, y+50);
+      image(d, x, y, 300, 300);
+      textSize(24);
+      text("Damage Level " + dlvl, x, y-100);
+      textSize(27);
+      text("+7 Damage", x, y+100);
       break;
     case 'h':
-      image(h, x-7, y-5, 90, 90);
-      textSize(14);
-      text("Health Level " + hlvl, x, y-50);
-      textSize(15);
-      text("+5 HP", x, y+50);
+      image(h, x-14, y-5, 170, 170);
+      textSize(23);
+      text("Health Level " + hlvl, x, y-100);
+      textSize(27);
+      text("+5 HP", x, y+100);
       break;
     case 's':
-      image(s, x, y, 190, 190);
-      textSize(14);
-      text("Speed Level " + slvl, x, y-50);
-      textSize(17);
-      text("+3%", x, y+50);
+      image(s, x, y, 380, 380);
+      textSize(23);
+      text("Speed Level " + slvl, x, y-100);
+      textSize(28);
+      text("+3%", x, y+100);
       break;
     case 'f':
-      image(f, x, y, 150, 150);
-      textSize(13);
-      text("Fire Rate Level " + flvl, x, y-50);
-      textSize(17);
-      text("+4%", x, y+50);
+      image(f, x, y, 300, 300);
+      textSize(22);
+      text("Fire Rate Level " + flvl, x, y-100);
+      textSize(28);
+      text("+4%", x, y+100);
       break;
     case 'p':
-      image(p, x, y, 85, 85);
-      textSize(11);
-      text("Shot Velocity Level " + plvl, x, y-50);
-      textSize(17);
-      text("+30%", x, y+50);
+      image(p, x, y, 170, 170);
+      textSize(20);
+      text("Shot Velocity Level " + plvl, x, y-100);
+      textSize(28);
+      text("+30%", x, y+100);
       break;
     case 'r':
-      image(r, x, y, 70, 70);
-      textSize(11);
-      text("Healh Regen Level " + rlvl, x, y-50);
-      textSize(15);
-      text("+.6 HP/s", x, y+50);
+      image(r, x, y, 140, 140);
+      textSize(22);
+      text("Healh Regen Level " + rlvl, x, y-100);
+      textSize(26);
+      text("+.6 HP/s", x, y+100);
       break;
     case 'z':
-      image(z, x, y, 70, 70);
-      textSize(13);
-      text("Shot Size Level " + zlvl, x, y-50);
-      textSize(15);
-      text("+4%", x, y+50);
+      image(z, x, y, 280, 280);
+      textSize(24);
+      text("Shot Size Level " + zlvl, x, y-100);
+      textSize(26);
+      text("+4%", x, y+100);
       break;
     default:
       break;

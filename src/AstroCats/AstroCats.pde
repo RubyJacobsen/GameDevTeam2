@@ -42,7 +42,7 @@ void setup() {
   // ill do random later, after adding more upgrades
   for (int i=0; i<upgrades.length; i++) {
     //upt=int(random(6));
-    upgrades[i]=new Upgrade(110*(i+1), 150, roll(int(random(6))));
+    upgrades[i]=new Upgrade(width/2+220*(i-1), height/2-30, roll(int(random(6))));
   }
   xps.add(new Xp(width/2, height/2));
   info = new Infopanel(0, 100, 1);
