@@ -20,14 +20,14 @@ Environment(int wave) {
     }
   }
   void nebula(int w) {
-    tint(255,w*10+30);
+    tint(255,w*25+5);
     image(nebula,0,4*height/10);
     image(nebula,7*width/10,1*height/10);
     image(nebula,5*width/10,7*height/10);
     tint(255,255);
   }
   void blackHole(int w) {
-    tint(255, w*10+30);
+    tint(255, w*25+5);
     image(bh, 4*width/10, 4*height/10);
     tint(255,255);
   }

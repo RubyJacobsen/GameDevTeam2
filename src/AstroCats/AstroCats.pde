@@ -114,16 +114,16 @@ void draw() {
       float tempx=random(width-10);
       float tempy=random(height-10);
       int tempe=int(random(2, 4));
-      if (wave==20) {
+      if (wave==10) {
 
         enemies.add(new Enemy(0, 4*height/10, 1000, 'e'));
         enemies.add(new Enemy(7*width/10, 1*height/10, 1000, 'e'));
         enemies.add(new Enemy(5*width/10, 7*height/10, 1000, 'e'));
       } else {
         for (int i=0; i<tempe*wave; i++) {
-          enemies.add(new Enemy(tempx, tempy, 100+(wave-1)*20, 'b'));
-        }
-      }
+          enemies.add(new Enemy(tempx, tempy, 100+(wave-1)*15, 'b'));
+        } //<>//
+      } //<>//
     } //<>//
        //<>//
       //eeeenmie logic
