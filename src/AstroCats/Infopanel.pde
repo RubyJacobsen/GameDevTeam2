@@ -1,7 +1,6 @@
 class Infopanel {
   int score;
   int health;
-
   int level;
   PImage healthbar;
 

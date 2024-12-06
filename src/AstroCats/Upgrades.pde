@@ -95,7 +95,7 @@ class Upgrade {
   }
 
   boolean hover() {
-    if (mouseX < x+50 && mouseX > x-50 && mouseY < y+75 && mouseY > y-75) {
+    if (mouseX < x+100 && mouseX > x-100 && mouseY < y+150 && mouseY > y-150) {
       col = #d6d6d6;
       return true;
     } else col = #ffffff;

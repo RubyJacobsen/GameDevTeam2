@@ -23,7 +23,7 @@ int lvl = 1;
 int expr = lvl*20;
 float t = random(7);
 char upt;
-int wave=1;
+int wave=0;
 boolean playing = false;
 int intro;
 
@@ -64,6 +64,7 @@ void setup() {
 void draw() {
   if (!playing) {
     background(#000000);
+    textSize(20);
     if(millis()>(intro+1)*3000) {intro++;}
     switch (intro) {
     case 1: text("meow meow meow meow",width/2,height/2);
@@ -106,7 +107,7 @@ void draw() {
       playing=true;
       start.play();
       p = new Player(width/2, height/2);
-      wave = 1;
+      wave = 0;
       for (int i=enemies.size()-1; i>=0; i--) {
         enemies.remove(i);
       }
@@ -121,8 +122,8 @@ void draw() {
             exp = exp-expr;
             lvl++;
             expr += 10;
-            info.levelUp();
-            level(upgrades[i].c, i);
+            info.levelUp(); //<>//
+            level(upgrades[i].c, i); //<>//
             lvlup.play();
             for (Upgrade u : upgrades) {
               u.c=roll(int(random(7)));
@@ -253,6 +254,9 @@ void draw() {
         p.health += p.regen;
       }
       info.display();
+      fill(255);
+      textSize(25);
+      text("Wave: " + wave, 50, 250);
       fill(0, 0, 255);
       if (exp<=expr) {
         rect(((width/2)-0.5*(0.75*width)+1), (59*height/64)-((height/64)-5), (float(exp)/float(expr))*(3*width/4), (height/32)-6);

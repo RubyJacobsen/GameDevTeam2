@@ -34,6 +34,7 @@ class Enemy {
     vy = random(-5, 5);
     d=10;
     e1 = loadImage("TheEliteGH.png");
+    e1.resize(size*3, size*3);
     atkCD=1000;
     break;
   }
