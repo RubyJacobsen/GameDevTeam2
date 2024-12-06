@@ -63,7 +63,8 @@ void setup() {
 void draw() {
   if (!playing) {
     background(#000000);
-    startbutton.resize(100, 100);
+    
+    startbutton.resize(millis()/20, millis()/20);
     image(startbutton, width/2, height/2);
     if (mousePressed) {
       playing=true;
@@ -121,7 +122,7 @@ void draw() {
           enemies.add(new Enemy(tempx, tempy, 100+(wave-1)*20, 'b'));
         }
       }
-    }
+    } //<>//
        //<>//
       //eeeenmie logic
       for (Enemy e : enemies) {
