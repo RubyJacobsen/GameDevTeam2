@@ -65,9 +65,43 @@ void draw() {
   if (!playing) {
     background(#000000);
     if(millis()>(intro+1)*3000) {intro++;}
-    text(intro,width/2,height/2);
-    startbutton.resize(millis()/20, millis()/20);
+    switch (intro) {
+    case 1: text("meow meow meow meow",width/2,height/2);
+    break;
+    case 2: text("meow meow meow meow meow",width/2,height/2);
+    break;
+    case 3: text("meow meow meow ",width/2,height/2);
+    break;
+    case 4: text("meow meow meow meow meow meow meow meow",width/2,height/2);
+    break;
+    case 5: text("meow meow meow meow",width/2,height/2);
+    break;
+    case 6: text("meow meow meow meow meow me-",width/2,height/2);
+    break;
+    case 7: text("MEOW MEOW MEOW MEOW!!!!",width/2,height/2);
+    break;
+    case 8: text("meow meow meow meOW!!",width/2,height/2);
+    break;
+    case 9: text("meow meow meow meow meow meow???",width/2,height/2);
+    break;
+    case 10: text("m-m-m-meow...",width/2,height/2);
+    break;
+    case 11: text("meow meow meow meow",width/2,height/2);
+    break;
+    case 12: text("meow meow meow meow meow!!!!",width/2,height/2);
+    break;
+    default:
     image(startbutton, width/2, height/2);
+      
+    
+    
+    
+    }
+    
+    
+    text("(The introduction of this game is written in cat language)",width/2,height/2+50);
+   // startbutton.resize(millis()/20, millis()/20);
+    
     if (mousePressed) {
       playing=true;
       start.play();
