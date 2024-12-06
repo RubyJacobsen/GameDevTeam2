@@ -77,12 +77,12 @@ class Upgrade {
     case 'r':
       image(r, x, y, 140, 140);
       textSize(22);
-      text("Healh Regen Level " + rlvl, x, y-100);
+      text("Health Regen Level " + rlvl, x, y-100);
       textSize(26);
       text("+.6 HP/s", x, y+100);
       break;
     case 'z':
-      image(z, x, y, 280, 280);
+      image(z, x, y, 400, 400);
       textSize(24);
       text("Shot Size Level " + zlvl, x, y-100);
       textSize(26);
