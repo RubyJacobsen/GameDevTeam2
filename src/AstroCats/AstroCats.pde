@@ -25,6 +25,7 @@ float t = random(7);
 char upt;
 int wave=1;
 boolean playing = false;
+int intro;
 
 
 
@@ -63,7 +64,8 @@ void setup() {
 void draw() {
   if (!playing) {
     background(#000000);
-    
+    if(millis()>(intro+1)*3000) {intro++;}
+    text(intro,width/2,height/2);
     startbutton.resize(millis()/20, millis()/20);
     image(startbutton, width/2, height/2);
     if (mousePressed) {
