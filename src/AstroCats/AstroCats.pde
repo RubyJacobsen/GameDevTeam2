@@ -67,30 +67,18 @@ void draw() {
     textSize(20);
     if(millis()>(intro+1)*3000) {intro++;}
     switch (intro) {
-    case 1: text("meow meow meow meow",width/2,height/2);
-    break;
-    case 2: text("meow meow meow meow meow",width/2,height/2);
-    break;
-    case 3: text("meow meow meow ",width/2,height/2);
-    break;
-    case 4: text("meow meow meow meow meow meow meow meow",width/2,height/2);
-    break;
-    case 5: text("meow meow meow meow",width/2,height/2);
-    break;
-    case 6: text("meow meow meow meow meow me-",width/2,height/2);
-    break;
-    case 7: text("MEOW MEOW MEOW MEOW!!!!",width/2,height/2);
-    break;
-    case 8: text("meow meow meow meOW!!",width/2,height/2);
-    break;
-    case 9: text("meow meow meow meow meow meow???",width/2,height/2);
-    break;
-    case 10: text("m-m-m-meow...",width/2,height/2);
-    break;
-    case 11: text("meow meow meow meow",width/2,height/2);
-    break;
-    case 12: text("meow meow meow meow meow!!!!",width/2,height/2);
-    break;
+    case  1  : text("  In a distant galaxy, millions of light-years away, lies the lush and vibrant planet of Felinnea.       ",width/2,height/2); break;
+case  2  : text("  Known for its stunning landscapes of bioluminescent jungles and advanced technology. But this paradise is now under siege.  ",width/2,height/2); break;
+case  3  : text("  But this paradise is now under siege.  ",width/2,height/2); break;
+case  4  : text("  The Aliens, a brutal empire bent on universal conquest, has swept through the galaxy, destroying worlds and enslaving civilizations.  ",width/2,height/2); break;
+case  5  : text("  One by one, planets fall to Aliens power.  ",width/2,height/2); break;
+case  6  : text("  Now, the alien mothership—an enormous, world-crushing vessel—looms above the last free world:  ",width/2,height/2); break;
+case  7  : text("  Felinnea.  ",width/2,height/2); break;
+case  8  : text("  With the enemy closing in, Queen of Felinnea, the wise and noble ruler of the planet Felinnea, makes a desperate final move.  ",width/2,height/2); break;
+case  9  : text("  She takes control of the last remaining Felinnean starship, the Stellar Paws, and sends a lone warrior—Cat—on a perilous mission across the stars.  ",width/2,height/2); break;
+case  10  : text("  Her mission: to reach Earth, an ancient and mysterious planet, and seek help from its inhabitants.  ",width/2,height/2); break;
+case  11  : text("  Felinnea is on the brink of annihilation, and only the humans possess the strength and will to turn the tide of war.  ",width/2,height/2); break;
+case  12  : text("  Cat is their final hope.  ",width/2,height/2); break;
     default:
     image(startbutton, width/2, height/2);
       
@@ -100,7 +88,7 @@ void draw() {
     }
     
     
-    text("(The introduction of this game is written in cat language)",width/2,height/2+50);
+    
    // startbutton.resize(millis()/20, millis()/20);
     
     if (mousePressed) {
@@ -134,8 +122,8 @@ void draw() {
       }
   
   else {
-    m=millis();
-    background(#000000);
+    m=millis(); //<>//
+    background(#000000); //<>//
     e1.stars();
     e1.nebula(wave);
     e1.blackHole(wave);
@@ -169,10 +157,10 @@ void draw() {
         if (e.fire(m)) {
           projectiles.add(new Projectile(false, e.x, e.y, 8, e.direction+random(-PI/8, PI/8), e.d, 45));
         }
-      }
-      //Attack Cooldown, fire bullet
-      if (mousePressed) {
-        if (m-p.lastATK>p.atkcd*1000) {
+      } //<>//
+      //Attack Cooldown, fire bullet //<>//
+      if (mousePressed) { //<>//
+        if (m-p.lastATK>p.atkcd*1000) { //<>//
           projectiles.add(new Projectile(true, p.x, p.y, p.bspeed, p.direction, p.gundamage, p.bsize));
           p.lastATK=m;
           pew.play();
