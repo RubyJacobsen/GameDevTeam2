@@ -30,7 +30,7 @@ int intro;
 
 
 //Files
-PImage startbutton;
+PImage startbutton, introPic;
 SoundFile bgm, edead, lvlup, pdead, pew, collect, start;
 
 
