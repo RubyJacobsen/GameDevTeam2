@@ -23,7 +23,8 @@ Quick backstory/story info (you are an editor so you can add whatever you want)
 Start screen
 ![Start screen](https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/StartScreenGH.png)
 
-Game Over
+Game Over [prototype]
+
 ![Game Over](https://github.com/user-attachments/assets/f9815099-6d58-4008-8e0d-e84a5012ce91)
 
 Mockup
