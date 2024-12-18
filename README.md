@@ -24,7 +24,7 @@ Start screen
 ![Start screen](https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/StartScreenGH.png)
 
 Game Over
-![Game Over](https://github.com/user-attachments/assets/3b491c15-d652-4ea0-bd44-458abcda919a)
+![Game Over](https://github.com/user-attachments/assets/f9815099-6d58-4008-8e0d-e84a5012ce91)
 
 Mockup
 ![mockup](https://github.com/RubyJacobsen/GameDevTeam2/blob/main/images/Untitled%20Diagram(3)(3).drawio(1).png)
